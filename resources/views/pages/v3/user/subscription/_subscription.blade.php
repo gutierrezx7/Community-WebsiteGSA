@@ -2,12 +2,12 @@
     <div class="row">
 
         <div class="col-md-6">
-            <h4>Details</h4>
+            <h4>Detalhes</h4>
 
             <table class="table">
                 <tr>
                     <td>
-                        Content
+                        Conteúdo
                     </td>
                     <td>
                         <strong><a href="{{$subscription->relatableUrl()}}">{{$subscription->relatableName()}}</a></strong>
@@ -15,7 +15,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Price
+                        Preço
                     </td>
                     <td>
                         {{$subscription->currency()}} {{$subscription->amount()}}
@@ -23,7 +23,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Status
+                        Estado
                     </td>
                     <td>
                         {{$subscription->status}}
@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Processor
+                        Processador
                     </td>
                     <td>
                         {{$subscription->gateway}}
@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Started
+                        Iniciado
                     </td>
                     <td>
                         {{$subscription->created_at}}
@@ -53,30 +53,30 @@
             )
                 <form method="post" action="{{route('subscription.cancel', ['uuid' => auth()->id(), 'id' => $subscription->id()])}}">
                     {{csrf_field()}}
-                    <button type="submit" class="btn btn-xs btn-danger">Cancel subscription</button>
+                    <button type="submit" class="btn btn-xs btn-danger">Cancelar assinatura</button>
                 </form>
             @endif
         </div>
 
         <div class="col-md-6">
-            <h4>Settings</h4>
+            <h4>Configurações</h4>
             @if(
                 !$subscription->isPatreon() and
                 $subscription->expired()
             )
                 <div class="alert alert-warning">
-                    This subscription has been cancelled and can not longer be changed.
+                    Esta assinatura foi cancelada e não pode mais ser alterada.
                 </div>
             @else
                 @if($subscription->requiresCharacter())
 
                     @if(!$subscription->hasCharacter())
                         <div class="alert alert-warning">
-                            This subscriptions currently has no character setup. Please select a character to make sure you receive your rewards.
+                            Esta assinatura atualmente não tem nenhum personagem configurado. Por favor, selecione um personagem para garantir que você receba suas recompensas.
                         </div>
                     @else
                         <div class="alert alert-info">
-                            You can determine which character should receive the contents of this subscription. Certain subscriptions can only deliver on specific clusters, which also limits which character(s) you can choose. You can switch characters at any time.
+                            Você pode determinar qual personagem deve receber o conteúdo desta assinatura. Certas assinaturas só podem ser entregues em clusters específicos, o que também limita quais personagens você pode escolher. Você pode trocar de personagem a qualquer momento.
                         </div>
                     @endif
 
@@ -84,7 +84,7 @@
                         {{csrf_field()}}
                         <div class="form-group">
                             <label>
-                                Deliver content to:
+                                Entregar conteúdo para:
                             </label>
                             <select name="character_id">
                                 @foreach($subscription->availableCharacters() as $character)
@@ -99,7 +99,7 @@
                                 @endforeach
                             </select>
 
-                            <button type="submit" class="btn btn-default btn-small">Change</button>
+                            <button type="submit" class="btn btn-default btn-small">Alterar</button>
                         </div>
                     </form>
                 @endif

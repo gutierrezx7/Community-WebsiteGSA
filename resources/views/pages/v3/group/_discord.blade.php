@@ -1,6 +1,6 @@
-@component('partials.v3.frame', ['title' => 'Connect your Discord'])
+@component('partials.v3.frame', ['title' => 'Conecte o seu Discord'])
     <p>
-        Connect your Discord server to receive the logs in your private Discord server.
+        Conecte o seu servidor Discord para receber os registros em seu servidor Discord privado.
     </p>
 
     @if( $group->discordSetup() )
@@ -8,27 +8,27 @@
         @if($group->discordChannelSetup())
             <div class="alert alert-success">
                 <span class="indent">
-                    Discord <strong>{{$group->discordServerName()}}</strong> connected
+                    Discord <strong>{{$group->discordServerName()}}</strong> conectado
                 </span>
             </div>
         @else
             <div class="alert alert-warning">
                 <span class="indent">
-                    Please select a channel to report to.<br>
-                    <strong>Make sure the bot has access to the channel!</strong>
+                    Por favor, selecione um canal para relatar.<br>
+                    <strong>Assegure-se de que o bot tenha acesso ao canal!</strong>
                 </span>
             </div>
         @endif
 
         <div class="alert alert-warning">
-            If the bot is not able to talk in the channel you select, it will disconnect.
+            Se o bot não puder enviar mensagens no canal que você selecionou, ele será desconectado.
         </div>
 
         <form method="post" action="{{route('group.discord.save', $group->id)}}">
             {{csrf_field()}}
 
             <select name="channel_id">
-                <option value="-1"> - Select a Discord channel - </option>
+                <option value="-1"> - Selecione um canal do Discord - </option>
                 @foreach($group->discord['available_channels'] as $id => $name)
                     @if($group->discordChannelSetup() and $id == $group->discord['channel'])
                         <option selected value="{{$id}}">{{$name}} [Current]</option>
@@ -43,7 +43,7 @@
             @include('partials.v3.button', [
                 'type' => 'submit',
                 'element' => 'button',
-                'title' => translate('save_channel', 'Save channel'),
+                'title' => translate('save_channel', 'Salvar canal'),
                 'class' => 'center btn-theme-rock'
             ])
 
@@ -56,7 +56,7 @@
             @include('partials.v3.button', [
                 'type' => 'submit',
                 'element' => 'button',
-                'title' => translate('disconnect_discord', 'Disconnect Discord'),
+                'title' => translate('disconnect_discord', 'Desconectar Discord'),
                 'class' => 'center'
             ])
         </form>
@@ -65,13 +65,13 @@
         <br>
         @if($group->isOwner(auth()->user()))
             @include('partials.v3.button', [
-                'title' => translate('connect_discord', 'Connect Discord'),
+                'title' => translate('connect_discord', 'Conectar Discord'),
                 'route' => $group->discordOAuthRedirectUrl(),
                 'class' => 'center btn-theme-rock'
             ])
         @else
             <div class="alert alert-warning">
-                Only the owner of this group can connect the Discord server.
+                Apenas o proprietário deste grupo pode conectar o servidor Discord.
             </div>
         @endif
     @endif

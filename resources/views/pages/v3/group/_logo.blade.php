@@ -6,15 +6,15 @@ use GameserverApp\Helpers\SiteHelper;
     {{csrf_field()}}
 
     @component('partials.v3.frame', [
-        'title' => 'Upload your logo',
+        'title' => 'Faça o upload do seu logotipo',
         'footer' => '<small>Max. 500KB | Supported: png, jpg, jpeg, gif</small>'
     ])
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Logo</label>
+                    <label>Logotipo</label>
                     <p>
-                        Personalize your group page with your group logo.
+                        Personalize a página do seu grupo com o logotipo do grupo.
                     </p>
 
                     @if(SiteHelper::featureEnabled('tribe_image_upload'))
@@ -39,7 +39,7 @@ use GameserverApp\Helpers\SiteHelper;
             ])
         @else
             <div class="alert alert-warning">
-                This feature is disabled.
+                Essa funcionalidade está desativada.
             </div>
         @endif
     @endcomponent

@@ -13,10 +13,10 @@
     <div class="row">
         <div class="col-md-6 center-block">
 
-            @component('partials.v3.frame', ['title' => 'Restricted'])
+            @component('partials.v3.frame', ['title' => 'Restrito'])
 
                 <div class="text-center">
-                    <p>You need to be part of <strong>{{$group->name()}}</strong> to access this page.</p>
+                    <p>Você precisa fazer parte de <strong>{{$group->name()}}</strong> para acessar esta página.</p>
                 </div>
 
                 @if(!auth()->check())
@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <a class="btn btn-theme btn-theme-rock" href="{{route('auth.login')}}">
-                                <span>Login</span>
+                                <span>Entrar</span>
                             </a>
                         </div>
                     </div>

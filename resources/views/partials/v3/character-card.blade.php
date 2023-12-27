@@ -22,32 +22,31 @@ use GameserverApp\Helpers\SiteHelper;
 
                     @if($character->hasGame() and $character->game->supportLevel())
                         <div>
-                            Level: {{$character->level}}
+                            Nível: {{$character->level}}
                         </div>
                     @endif
 
                     <div>
-                        Played: {{$character->hoursPlayed()}} hours
+                        Jogado: {{$character->hoursPlayed()}} horas
                     </div>
-
 
                     @if(GameserverApp\Helpers\SiteHelper::featureEnabled('player_status'))
                         @if( $character->online() )
                             <div>
-                                Online since: {{str_replace('minutes', 'min.', $character->date('status_since')->diffForHumans())}}
+                                Online desde: {{str_replace('minutes', 'min.', $character->date('status_since')->diffForHumans())}}
                             </div>
                         @else
                             <div>
-                                Last online: {{$character->date('status_since')->diffForHumans()}}
+                                Último acesso: {{$character->date('status_since')->diffForHumans()}}
                             </div>
                         @endif
                     @endif
 
                     <div>
-                        Created: {{$character->date('created_at')->diffForHumans()}}
+                        Criado: {{$character->date('created_at')->diffForHumans()}}
                     </div>
                     <div>
-                        Server:
+                        Servidor:
                         @if($character->hasServer())
                             {{$character->server->name(13)}}
                         @endif
@@ -56,7 +55,7 @@ use GameserverApp\Helpers\SiteHelper;
                     <br>
 
                     <div class="owner">
-                        Owner:
+                        Proprietário:
                         @if($character->hasUser())
                             {!! $character->user->showLink(['limit' => 12]) !!}
                         @endif
@@ -93,7 +92,7 @@ use GameserverApp\Helpers\SiteHelper;
                         )
                             @include('partials.v3.button', [
                                 'route' => route('message.create', $character->user->id),
-                                'title' => translate('recruit', 'Recruit'),
+                                'title' => 'Recrutar',
                                 'class' => 'btn-theme-rock tiny'
                             ])
                         @endif
@@ -112,7 +111,7 @@ use GameserverApp\Helpers\SiteHelper;
                         )
                             @include('partials.v3.button', [
                                 'route' => route('message.create', $character->user->id),
-                                'title' => translate('send_message', 'Send message'),
+                                'title' => 'Enviar mensagem',
                                 'class' => 'tiny'
                             ])
                         @endif

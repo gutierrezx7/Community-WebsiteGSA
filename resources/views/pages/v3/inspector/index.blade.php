@@ -5,8 +5,8 @@ use GameserverApp\Helpers\SiteHelper;
 @extends('layouts.v3.default', [
     'page' => [
         'title' => translate('inspector', 'Inspector'),
-        'description' => 'Search all characters and groups on the community.',
-        'class' => 'inspector'
+        'description' => 'Pesquise todos os personagens e grupos na comunidade.',
+        'class' => 'inspetor'
     ],
 
     'breadcrumbs' => [
@@ -22,8 +22,8 @@ use GameserverApp\Helpers\SiteHelper;
         <div class="row">
 
             <div class="col-sm-12 text-center">
-                {{--                    <h3 class="title">{{translate('search', 'Search')}}:</h3>--}}
-                <input type="text" class="form-control search" name="search" value="{{request('search')}}" placeholder="Search for..." autofocus>
+            {{--                    <h3 class="title">{{translate('search', 'Search')}}:</h3>--}}
+                <input type="text" class="form-control search" name="search" value="{{request('search')}}" placeholder="Pesquisar por..." autofocus>
             </div>
 
         </div>
@@ -33,11 +33,11 @@ use GameserverApp\Helpers\SiteHelper;
             <div class="col-sm-9">
 
                 <h5>
-                    Found {{$results->total()}}
+                    Encontrados {{$results->total()}}
                     @if( $results->total() == 1 )
-                        result
+                        resultado
                     @else
-                        results
+                        resultados
                     @endif
                 </h5>
 
@@ -73,9 +73,9 @@ use GameserverApp\Helpers\SiteHelper;
                     <div class="col-md-6 center-block">
                         <br>
                         <div class="text-center">
-                            <h2>No results...</h2>
+                            <h2>Sem resultados...</h2>
                             <p>
-                                Try something else!
+                                Tente algo diferente!
                             </p>
                         </div>
                     </div>
@@ -89,7 +89,7 @@ use GameserverApp\Helpers\SiteHelper;
             </div>
 
             <div class="col-sm-3">
-                <h5>Filters</h5>
+                <h5>Filtros</h5>
 
                 @component('partials.v3.frame', ['type' => 'basic'])
                     @include('pages.v3.inspector._filters')
@@ -98,14 +98,12 @@ use GameserverApp\Helpers\SiteHelper;
                 @include('partials.v3.button', [
                     'type' => 'submit',
                     'element' => 'button',
-                    'title' => translate('search', 'Search'),
+                    'title' => translate('search', 'Pesquisar'),
                     'class' => 'center'
                 ])
             </div>
 
         </div>
     </form>
-
-
 
 @stop

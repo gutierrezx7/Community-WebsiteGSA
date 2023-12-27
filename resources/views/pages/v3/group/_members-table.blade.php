@@ -2,16 +2,16 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th class="text-center">Name</th>
-            <th class="text-center">Level</th>
-            <th class="text-center">Rank</th>
+            <th class="text-center">Nome</th>
+            <th class="text-center">Nível</th>
+            <th class="text-center">Cargo</th>
         </tr>
         </thead>
         <tbody>
         @foreach($group->members as $char)
             <tr>
                 <td>
-                    <span class="image">
+                <span class="image">
                         <img src="{{$char->image()}}" height="20">
                     </span>
                     {!! $char->showLink() !!}
@@ -23,11 +23,11 @@
                 </td>
                 <td class="text-center">
                     @if( $char->groupOwner($group) )
-                        Owner
+                        Proprietário
                     @elseif($char->groupAdmin($group))
-                        Manager
+                        Gerente
                     @else
-                        Member
+                        Membro
                     @endif
                 </td>
             </tr>

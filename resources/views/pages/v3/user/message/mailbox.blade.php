@@ -73,7 +73,7 @@ if($title == 'Inbox') {
                     </div>
                 @empty
                     <div class="message-item text-center">
-                        <em>No messages...</em>
+                        <em>Sem mensagens...</em>
                     </div>
                 @endforelse
 

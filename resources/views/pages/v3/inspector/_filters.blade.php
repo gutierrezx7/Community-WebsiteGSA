@@ -17,11 +17,11 @@
         <h4>Gender</h4>
 
         <label>
-            {!! Form::checkbox('gender-m', 1, Request::get('gender-m')) !!} Male
+            {!! Form::checkbox('gender-m', 1, Request::get('gender-m')) !!} Masculino
         </label>
         <br>
         <label>
-            {!! Form::checkbox('gender-f', 1, Request::get('gender-f')) !!} Female
+            {!! Form::checkbox('gender-f', 1, Request::get('gender-f')) !!} Feminino
         </label>
     </div>
 
@@ -42,18 +42,18 @@
     <hr>
 
     <div class="form-group">
-        <h4>Order results by</h4>
+        <h4>Ordenar resultados por</h4>
 
 
         <?php
         $orderBy = [
-            'name' => 'Name',
-            'level' => 'Level',
-            'created' => 'Create date',
+            'name' => 'Nome',
+            'level' => 'Nível',
+            'created' => 'Data de criação',
         ];
 
         if(GameserverApp\Helpers\SiteHelper::featureEnabled('player_status')) {
-            $orderBy['activity'] = 'Last activity';
+            $orderBy['activity'] = 'Última atividade';
         }
         ?>
 
@@ -61,8 +61,8 @@
         <br>
 
         {!! Form::select('order', [
-            'asc' => 'Ascending',
-            'desc' => 'Descending'
+            'asc' => 'Ascendente',
+            'desc' => 'Descendente'
         ],
         Request::get('order')) !!}
 
@@ -72,7 +72,7 @@
         <hr>
 
         <label>
-            {!! Form::checkbox('only_online', 1, Request::get('only_online')) !!} Show online only
+            {!! Form::checkbox('only_online', 1, Request::get('only_online')) !!} Mostrar apenas online
         </label>
     @endif
 

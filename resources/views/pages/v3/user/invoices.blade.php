@@ -5,8 +5,8 @@ use GuzzleHttp\Exception\ClientException;
 
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => translate('invoices', 'Invoices'),
-        'description' => 'Invoices',
+        'title' => translate('faturas', 'Faturas'),
+        'description' => 'Faturas',
         'class' => 'user-single',
         'attributes' => ''
     ],
@@ -22,9 +22,9 @@ use GuzzleHttp\Exception\ClientException;
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Amount</th>
-                        <th>Order</th>
+                        <th>Data</th>
+                        <th>Valor</th>
+                        <th>Pedido</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -38,8 +38,8 @@ use GuzzleHttp\Exception\ClientException;
                             <td colspan="4">
                                 <br>
                                 <div class="alert alert-warning">
-                                    <strong>Invoices unavailable</strong><br>
-                                    Contact the owner of the community to activate the invoices.
+                                    <strong>Faturas indisponíveis</strong><br>
+                                    Entre em contato com o proprietário da comunidade para ativar as faturas.
                                 </div>
                             </td>
                         </tr>
@@ -59,7 +59,7 @@ use GuzzleHttp\Exception\ClientException;
 
                                         @if($item->isSubscriptionSale())
                                             <span class="label label-primary">
-                                                Subscription sale
+                                                Venda de assinatura
                                             </span>
                                         @endif
 
@@ -69,13 +69,13 @@ use GuzzleHttp\Exception\ClientException;
                                 </td>
                                 <td align="right">
                                     @if($item->hasInvoiceLink())
-                                        <a href="{{route('user.invoices.download', ['uuid' => auth()->user()->id, 'sale_id' => $item->id()])}}" target="_blank" class="btn btn-default">Download receipt</a>
+                                        <a href="{{route('user.invoices.download', ['uuid' => auth()->user()->id, 'sale_id' => $item->id()])}}" target="_blank" class="btn btn-default">Baixar recibo</a>
                                     @endif
                                 </td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="3"><em>No invoices yet.</em></td>
+                                <td colspan="3"><em>Nenhuma fatura ainda.</em></td>
                             </tr>
                         @endforelse
                     @endif

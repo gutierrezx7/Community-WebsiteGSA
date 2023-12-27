@@ -3,14 +3,14 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Vote for {{$server->name()}}</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Votar em {{$server->name()}}</h4>
             </div>
             <div class="modal-body">
 
                 @if(!auth()->check())
                     <div class="alert alert-danger">
-                        Please login to claim your vote.
+                        Faça login para reivindicar seu voto.
                     </div>
                     <br>
                 @endif
@@ -24,7 +24,7 @@
                                     <img src="{{$site->icon}}" height="15" title="{{$site->name}}" />
                                     &nbsp;
                                 @endif
-                                Vote on {{$site->name}}
+                                Votar em {{$site->name}}
                             </a><br><br>
                         </div>
                     @endforeach
@@ -33,10 +33,10 @@
 
             @if(auth()->check())
                 <div class="modal-footer">
-                    <span>Claim your vote after voting</span>
+                    <span>Reivindique seu prêmio após votar</span>
                     <form style="display:inline-block" method="post" action="{{route('server.claim-vote', $server->id)}}">
                         {{csrf_field()}}
-                        <button class="btn btn-success btn-xs">Claim</button>
+                        <button class="btn btn-success btn-xs">Reivindicar</button>
                     </form>
                 </div>
             @endif

@@ -1,18 +1,19 @@
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => 'Discord connected!',
+        'title' => 'Discord conectado!',
         'description' => '',
         'class' => 'error pagebuilder'
     ],
 ])
+
 @section('page_content')
 
     <div class="row padding-2">
         <div class="col-md-6 center-block">
-            @component('partials.v3.frame', ['class' => 'text-center no-bottom-margin', 'title' => 'Your Discord is now connected'])
+            @component('partials.v3.frame', ['class' => 'text-center no-bottom-margin', 'title' => 'Seu Discord está agora conectado'])
 
                 <p>
-                    Get ready for some bot magic!
+                    Prepare-se para um pouco de magia de bot!
                 </p>
 
                 <br>

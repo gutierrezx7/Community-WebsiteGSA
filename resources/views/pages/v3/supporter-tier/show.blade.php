@@ -8,7 +8,7 @@
 
     'breadcrumbs' => [
         [
-            'title' => translate('supporter_tiers', 'Supporter tiers'),
+            'title' => translate('supporter_tiers', 'Tiers de Apoiador'),
             'route' => route('supporter-tier.index')
         ],
         [
@@ -43,7 +43,7 @@
                     @if(auth()->check())
                         @if($package->requiresDiscordSetup() and !auth()->user()->hasDiscordSetup())
                             <div class="alert alert-danger">
-                                You need to <a href="{{route('user.settings', auth()->user()->id)}}">setup your Discord</a> to receive this package.
+                                Você precisa <a href="{{route('user.settings', auth()->user()->id)}}">configurar o seu Discord</a> para receber este pacote.
                             </div>
                             <br>
                         @endif
@@ -53,7 +53,7 @@
                         <div class="alert alert-warning">
                             <span>
                                 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                                Only deliverable on the <strong>{{$package->cluster}}</strong> cluster!
+                                Entrega apenas no cluster <strong>{{$package->cluster}}</strong>!
                             </span>
                         </div>
                         <br>
@@ -62,7 +62,7 @@
                     @component('partials.v3.frame', [
                         'type' => 'big'
                     ])
-                        <h4>Order contents</h4>
+                        <h4>Conteúdo do Pedido</h4>
 
                         {!! Markdown::convertToHtml($package->description()) !!}
 
@@ -75,9 +75,9 @@
                                 @if($package->discount())
                                     <h4>
                                         @if($package->isSubscription())
-                                            Costs
+                                            Custos
                                         @else
-                                            Price
+                                            Preço
                                         @endif
 
                                         @if($package->hasLabel())
@@ -95,7 +95,7 @@
                                     <p>
                                         <strong>
                                             @if($package->isSubscription())
-                                                Costs:
+                                                Custos:
                                             @else
                                                 Total:
                                             @endif
@@ -108,12 +108,12 @@
                             </div>
                             <div class="col-lg-4  col-md-6 coupon">
 
-                                <h4>Discount code:</h4>
+                                <h4>Código de Desconto:</h4>
                                 <form method="get">
                                     <div class="input-group">
-                                        <input class="form-control" name="coupon" type="text" value="{{request('coupon', '')}}" placeholder="Enter your discount code">
+                                        <input class="form-control" name="coupon" type="text" value="{{request('coupon', '')}}" placeholder="Digite o seu código de desconto">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-default" type="submit">Apply</button>
+                                            <button class="btn btn-default" type="submit">Aplicar</button>
                                         </span>
                                     </div>
                                 </form>
@@ -134,7 +134,7 @@
                                 <div class="alert alert-success">
                                     <span>
                                         <i class="fa fa-check" aria-hidden="true"></i>
-                                        You can easily stop automatic renewal at any moment.
+                                        Você pode interromper facilmente a renovação automática a qualquer momento.
                                     </span>
                                 </div>
                             @endif
@@ -142,9 +142,9 @@
                             <div class="btnwrap text-center">
                                 <?php
                                 if($package->isSubscription()) {
-                                    $text = 'Subscribe';
+                                    $text = 'Assinar';
                                 } else {
-                                    $text = 'Order';
+                                    $text = 'Pedir';
                                 }
                                 ?>
 
@@ -158,7 +158,7 @@
 
                         </form>
                     @else
-                        <div class="alert alert-info">Please <a href="{{route('auth.login')}}">login</a> to continue</div>
+                        <div class="alert alert-info">Por favor, <a href="{{route('auth.login')}}">faça login</a> para continuar</div>
                     @endif
 
                     <br><br>
@@ -169,26 +169,26 @@
 
                                     @if($package->isStripe())
 
-                                        <h4>Payments via Stripe</h4>
+                                        <h4>Pagamentos via Stripe</h4>
                                         <p>
-                                            We use Stripe to process payments.
+                                            Utilizamos o Stripe para processar pagamentos.
                                         </p>
                                         <p>
-                                            Before proceeding to Stripe, your Steam identity will be verified.
+                                            Antes de prosseguir para o Stripe, a sua identidade Steam será verificada.
                                         </p>
                                     @elseif($package->isPayPal())
 
-                                        <h4>Customer support</h4>
+                                        <h4>Suporte ao Cliente</h4>
                                         <p>
-                                            You can easily contact the merchant via your PayPal transaction overview. There you can find a "contact merchant" form.
+                                            Você pode facilmente entrar em contato com o comerciante através do resumo da transação do PayPal. Lá você pode encontrar um formulário "entrar em contato com o comerciante".
                                         </p>
                                         <hr>
 
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <h4>Security</h4>
+                                                <h4>Segurança</h4>
                                                 <p>
-                                                    Before proceeding to PayPal, your Steam identity will be verified.
+                                                    Antes de prosseguir para o PayPal, a sua identidade Steam será verificada.
                                                 </p>
                                             </div>
                                             <div class="col-md-6">
@@ -201,7 +201,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td align="center"><a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup"
-                                                                              title="How PayPal Works"
+                                                                              title="Como o PayPal Funciona"
                                                                               onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img
                                                                         src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png"
                                                                         width="200" border="0" alt="PayPal Acceptance Mark"></a></td>

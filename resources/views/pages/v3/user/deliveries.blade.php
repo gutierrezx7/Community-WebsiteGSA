@@ -4,8 +4,8 @@ use GameserverApp\Models\Delivery;
 
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => translate('deliveries', 'Deliveries'),
-        'description' => 'Delivery history',
+        'title' => translate('entregas', 'Entregas'),
+        'description' => 'Histórico de entregas',
         'class' => 'user-single',
         'attributes' => ''
     ],
@@ -22,8 +22,8 @@ use GameserverApp\Models\Delivery;
                     <thead>
                     <tr>
                         <th>Status</th>
-                        <th>Package</th>
-                        <th>Delivery ID</th>
+                        <th>Pacote</th>
+                        <th>ID da Entrega</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -36,31 +36,31 @@ use GameserverApp\Models\Delivery;
                                 {
                                     case Delivery::STATUS_CREATED:
                                     case Delivery::STATUS_IN_PROGRESS:
-                                        print '<div class="label label-default">Processing</div>';
+                                        print '<div class="label label-default">Processando</div>';
                                         break;
 
                                     case Delivery::STATUS_SUCCESS:
-                                        print '<div class="label label-success">Delivered</div>';
+                                        print '<div class="label label-success">Entregue</div>';
                                         break;
 
                                     case Delivery::STATUS_WAITING_PLAYER_COME_ONLINE:
-                                        print '<div class="label label-warning">Waiting for player</div>';
+                                        print '<div class="label label-warning">Aguardando o jogador</div>';
                                         break;
 
                                     case Delivery::STATUS_SCHEDULED:
-                                        print '<div class="label label-default">Scheduled</div>';
+                                        print '<div class="label label-default">Agendado</div>';
                                         break;
 
                                     case Delivery::STATUS_FULL_INVENTORY:
-                                        print '<div class="label label-warning">Character / Dino in inventory</div>';
+                                        print '<div class="label label-warning">Inventário do Personagem / Dino Cheio</div>';
                                         break;
 
                                     case Delivery::STATUS_UNDELIVERABLE:
-                                        print '<div class="label label-danger">Undeliverable</div>';
+                                        print '<div class="label label-danger">Não Entregável</div>';
                                         break;
 
                                     case Delivery::STATUS_ISSUE:
-                                        print '<div class="label label-danger">Error</div>';
+                                        print '<div class="label label-danger">Erro</div>';
                                         break;
                                 }
                                 ?>
@@ -70,7 +70,7 @@ use GameserverApp\Models\Delivery;
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="3"><em>No deliveries yet.</em></td>
+                            <td colspan="3"><em>Nenhuma entrega ainda.</em></td>
                         </tr>
                     @endforelse
 

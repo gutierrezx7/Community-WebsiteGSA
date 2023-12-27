@@ -10,7 +10,7 @@
                 <button type="button" class="btn btn-theme small" data-toggle="modal" data-target="#voteServer{{$server->id}}">
                     <span>
                         <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                        Vote
+                        Votar
                     </span>
                 </button>
             @endif
@@ -26,25 +26,25 @@
             @if($server->isScheduledForUpdate())
                 <span class="status_message">
                     @if( $server->date('update_at') > Carbon\Carbon::now() )
-                        Automatic update: {{$server->date('update_at')->diffForHumans()}}
+                        Atualização automática: {{$server->date('update_at')->diffForHumans()}}
                     @else
-                        Automatically updating & starting up...
+                        Atualização e inicialização automáticas em andamento...
                     @endif
                 </span>
             @elseif($server->isScheduledForShutdown())
                 <span class="status_message">
                     @if( $server->date('shutdown_at') > Carbon\Carbon::now() )
-                        Shutdown: {{$server->date('shutdown_at')->diffForHumans()}}
+                        Desligamento: {{$server->date('shutdown_at')->diffForHumans()}}
                     @else
-                        Shutdown in progress...
+                        Desligamento em andamento...
                     @endif
                 </span>
             @elseif($server->isScheduledForRestart())
                 <span class="status_message">
                     @if( $server->date('restart_at') > Carbon\Carbon::now() )
-                        Restart: {{$server->date('restart_at')->diffForHumans()}}
+                        Reinício: {{$server->date('restart_at')->diffForHumans()}}
                     @else
-                        Restart in progress...
+                        Reinício em andamento...
                     @endif
                 </span>
             @endif
@@ -74,7 +74,7 @@
 
         <a href="steam://connect/{{$server->connectAddress()}}" class="join-btn btn btn-theme">
             <span>
-                Click to join &raquo;
+                Clique para entrar &raquo;
             </span>
         </a>
 
@@ -82,7 +82,7 @@
 
             @if($server->twitchSubOnly())
                 <span class="label label-theme" target="_blank">
-                    <a href="{{route('user.settings', 'me')}}">Sub only</a>
+                    <a href="{{route('user.settings', 'me')}}">Apenas subscritores</a>
                 </span>
             @endif
 

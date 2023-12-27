@@ -1,6 +1,6 @@
-@component('partials.v3.frame', ['title' => 'Special tools'])
+@component('partials.v3.frame', ['title' => 'Ferramentas Especiais'])
     <p>
-        If you're unable to join the server due to the "There is already a player with this account connected" bug, you can kick yourself from the server.
+        Se você não conseguir entrar no servidor devido ao bug "Já existe um jogador com esta conta conectada", você pode se desconectar do servidor.
     </p>
     <br>
 
@@ -9,7 +9,7 @@
     @include('partials.v3.button', [
         'type' => 'submit',
         'element' => 'button',
-        'title' => translate('kick_me', 'Kick me'),
+        'title' => translate('kick_me', 'Me Desconectar'),
         'class' => 'center btn-theme-gem'
     ])
 

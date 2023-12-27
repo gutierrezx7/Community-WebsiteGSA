@@ -1,7 +1,7 @@
 @extends('layouts.v3.default', [
     'page' => [
         'title' => translate('subscriptions', 'Subscriptions'),
-        'description' => 'Manage your subscriptions',
+        'description' => 'Gerencie suas assinaturas',
         'class' => 'user-single article-index'
     ]
 ])
@@ -17,7 +17,7 @@
 
                 @component('partials.v3.frame')
                     <div class="text-center">
-                        <em>You don't have any subscriptions yet</em>
+                        <em>Você ainda não possui assinaturas</em>
                     </div>
                 @endcomponent
             @endforelse
@@ -28,7 +28,4 @@
         </div>
 
     </div>
-
-
-
 @stop

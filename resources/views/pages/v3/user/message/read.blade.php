@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Request;
 $user = auth()->user();
 
 if(auth()->id() == $message->receiver->id) {
-    $title = 'from ' . $message->sender->showLink();
+    $title = 'de ' . $message->sender->showLink();
 } else {
-    $title = 'to ' . $message->receiver->showLink();
+    $title = 'para ' . $message->receiver->showLink();
 }
 
 
@@ -17,8 +17,8 @@ if(auth()->id() == $message->receiver->id) {
 
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => translate('read_message', 'Read message'),
-        'description' => 'Send a message to fellow players.',
+        'title' => translate('read_message', 'Ler mensagem'),
+        'description' => 'Envie uma mensagem para outros jogadores.',
         'class' => 'message read user-single'
     ]
 ])
@@ -46,7 +46,7 @@ if(auth()->id() == $message->receiver->id) {
                     @include('pages.v3.user.message._form', ['reply' => $message])
                 @else
                     <div class="text-center">
-                        <div class="alert alert-info">Replying to this message is disabled.</div>
+                        <div class="alert alert-info">A resposta a esta mensagem está desativada.</div>
                     </div>
                 @endif
             @endif

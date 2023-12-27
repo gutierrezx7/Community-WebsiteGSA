@@ -1,7 +1,7 @@
 @extends('layouts.v3.default', [
     'page' => [
         'title' => translate('inspector', 'Inspector'),
-        'description' => 'Search all characters and groups on the community.',
+        'description' => 'Pesquise todos os personagens e grupos na comunidade.',
         'class' => 'inspector'
     ],
 
@@ -17,7 +17,7 @@
     <div class="row">
 
         <div class="col-md-12 text-center">
-            <h1 class="main-title">{{translate('disabled_by_admin', 'Disabled by admin')}}</h1>
+            <h1 class="main-title">{{translate('disabled_by_admin', 'Desativado pelo administrador')}}</h1>
         </div>
 
     </div>

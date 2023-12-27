@@ -1,14 +1,17 @@
 <?php
 if(isset($message)) {
-    $title = 'Send reply to';
-    $routeId = $message->sender->id;
-    $btnText = 'Send reply';
+    // Se a variável $message estiver definida, estamos respondendo a uma mensagem existente
+    $title = 'Enviar resposta para'; // Título da página
+    $routeId = $message->sender->id; // ID do destinatário (remetente da mensagem original)
+    $btnText = 'Enviar resposta'; // Texto do botão de envio
 } else {
-    $title = 'New message to';
-    $routeId = $receiver->id;
-    $btnText = 'Send message';
+    // Caso contrário, estamos criando uma nova mensagem
+    $title = 'Nova mensagem para'; // Título da página
+    $routeId = $receiver->id; // ID do destinatário (usuário ou destinatário da nova mensagem)
+    $btnText = 'Enviar mensagem'; // Texto do botão de envio
 }
 
+// Construção do título com base nas variáveis definidas acima
 if(!empty( $receiver->name )) {
     $title .= ' ' . $receiver->showLink();
 } elseif(isset($message)) {
@@ -18,7 +21,7 @@ if(!empty( $receiver->name )) {
         $title .= ' ' . $message->receiver->showLink();
     }
 } else {
-    $title .= ' player';
+    $title .= ' jogador';
 }
 ?>
 
@@ -30,13 +33,13 @@ if(!empty( $receiver->name )) {
             <input type="hidden" name="subject" value="{{$message->subject}}">
         @else
             <div class="form-group">
-                <label>Subject</label>
+                <label>Assunto</label>
                 <input type="text" class="form-control" name="subject" value="{{old('subject')}}">
             </div>
         @endif
 
         <div class="form-group">
-            <label>Message</label>
+            <label>Mensagem</label>
             <textarea type="text" class="form-control simplemde" name="content">{{old('content')}}</textarea>
         </div>
 

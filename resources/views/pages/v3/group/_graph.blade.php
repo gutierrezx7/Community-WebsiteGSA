@@ -18,7 +18,7 @@ if(isset($title)) {
              data-data='{!! json_encode($data['data']) !!}'
              data-options='{!!json_encode($data['options'])!!}'></div>
     @else
-        <em>Failed to load data.</em>
+        <em>Falha ao carregar os dados.</em>
     @endif
 
 @endcomponent

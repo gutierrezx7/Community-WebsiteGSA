@@ -1,13 +1,13 @@
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => translate('supporter_tiers', 'Supporter tiers'),
-        'description' => 'Contribute to your community.',
+        'title' => translate('supporter_tiers', 'Tiers de Apoiador'),
+        'description' => 'Contribua para a sua comunidade.',
         'class' => 'supporter-tier'
     ],
 
     'breadcrumbs' => [
         [
-            'title' => translate('supporter_tiers', 'Supporter tiers')
+            'title' => translate('supporter_tiers', 'Tiers de Apoiador')
         ]
     ]
 ])
@@ -20,15 +20,15 @@
 
     </div>
     <div class="col-md-4 text-center title">
-        <h1 class="main-title">{{translate('supporter_tiers', 'Supporter tiers')}}</h1>
+        <h1 class="main-title">{{translate('supporter_tiers', 'Tiers de Apoiador')}}</h1>
     </div>
     <div class="col-md-4 coupon">
-        <h4>Discount code:</h4>
+        <h4>Código de desconto:</h4>
         <form method="get">
             <div class="input-group">
-                <input class="form-control" name="coupon" type="text" value="{{request('coupon', '')}}" placeholder="Enter your discount code">
+                <input class="form-control" name="coupon" type="text" value="{{request('coupon', '')}}" placeholder="Digite seu código de desconto">
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">Apply</button>
+                    <button class="btn btn-default" type="submit">Aplicar</button>
                 </span>
             </div>
         </form>
@@ -51,7 +51,7 @@
     @empty
         <div class="col-md-12">
             <div class="text-center">
-                <em>No tiers available</em>
+                <em>Nenhum tier disponível</em>
             </div>
         </div>
     @endforelse

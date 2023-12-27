@@ -4,8 +4,8 @@ use GameserverApp\Models\Order;
 
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => translate('reward_shop_history', 'Reward shop history'),
-        'description' => 'Check out your reward shop history',
+        'title' => translate('histórico_da_loja_de_recompensas', 'Histórico da loja de recompensas'),
+        'description' => 'Confira o histórico da loja de recompensas',
         'class' => 'user-single',
         'attributes' => ''
     ],
@@ -22,8 +22,8 @@ use GameserverApp\Models\Order;
                     <thead>
                     <tr>
                         <th>Status</th>
-                        <th>Package</th>
-                        <th>Order #</th>
+                        <th>Pacote</th>
+                        <th>Pedido #</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -35,19 +35,19 @@ use GameserverApp\Models\Order;
                                 switch( $item->status() )
                                 {
                                     case Order::STATUS_PROCESSING:
-                                        print '<div class="label label-default">Processing</div>';
+                                        print '<div class="label label-default">Processando</div>';
                                         break;
 
                                     case Order::STATUS_FULL_INVENTORY:
-                                        print '<div class="label label-danger">Character / Dino in inventory</div>';
+                                        print '<div class="label label-danger">Personagem / Dino no inventário</div>';
                                         break;
 
                                     case Order::STATUS_DELIVERED:
-                                        print '<div class="label label-warning">Delivered</div>';
+                                        print '<div class="label label-warning">Entregue</div>';
                                         break;
 
                                     case Order::STATUS_PICKEDUP:
-                                        print '<div class="label label-success">Picked up</div>';
+                                        print '<div class="label label-success">Retirado</div>';
                                         break;
                                 }
                                 ?>
@@ -57,7 +57,7 @@ use GameserverApp\Models\Order;
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="3"><em>No deliveries yet.</em></td>
+                            <td colspan="3"><em>Sem entregas ainda.</em></td>
                         </tr>
                     @endforelse
 

@@ -12,7 +12,7 @@ use GameserverApp\Helpers\SiteHelper;
 
     'breadcrumbs' => [
         [
-            'title' => translate('reward_shop', 'Reward shop'),
+            'title' => translate('reward_shop', 'Loja de Recompensas'),
             'route' => route('shop.index')
         ],
         [
@@ -55,7 +55,7 @@ use GameserverApp\Helpers\SiteHelper;
 
                         @if(!auth()->check())
                             <div class="alert alert-info">
-                                Please <a href="{{route('auth.login')}}">login</a> to place an order.
+                                Por favor, <a href="{{route('auth.login')}}">faça login</a> para fazer um pedido.
                             </div>
                             <br>
                         @endif
@@ -63,7 +63,7 @@ use GameserverApp\Helpers\SiteHelper;
                         @if( SiteHelper::featureEnabled('tokens'))
                             @include('partials.v3.button', [
                                 'route' => GameserverApp\Helpers\RouteHelper::token(),
-                                'title' => 'Get tokens',
+                                'title' => 'Obter tokens',
                             ])
                         @endif
                     </div>
@@ -76,7 +76,7 @@ use GameserverApp\Helpers\SiteHelper;
             <div class="options-title">
                 <h2 class="title text-center">
                     <span>
-                        Collection options
+                        Opções de coleção
                     </span>
                 </h2>
             </div>
@@ -88,7 +88,7 @@ use GameserverApp\Helpers\SiteHelper;
             @empty
                 <div class="alert alert-warning">
 
-                    <em>This collection has no sub packages. Come back later...</em>
+                    <em>Esta coleção não tem subpacotes. Volte mais tarde...</em>
                 </div>
                 <br>
             @endif
@@ -100,7 +100,7 @@ use GameserverApp\Helpers\SiteHelper;
                             @if( SiteHelper::featureEnabled('tokens'))
                                 @include('partials.v3.button', [
                                     'route' => GameserverApp\Helpers\RouteHelper::token(),
-                                    'title' => 'Get tokens',
+                                    'title' => 'Obter tokens',
                                 ])
                             @endif
                         </div>
@@ -112,15 +112,15 @@ use GameserverApp\Helpers\SiteHelper;
             @component('partials.v3.frame', ['type' => 'basic'])
                 <div class="row">
                     <div class="col-md-6">
-                        <h6>When do I get it?</h6>
+                        <h6>Quando vou receber?</h6>
                         <p>
-                            Your order is delivered automatically when you are online. This usually takes less than 1 minute. You're notified in-game about the status.
+                            Seu pedido é entregue automaticamente quando você está online. Isso geralmente leva menos de 1 minuto. Você será notificado no jogo sobre o status.
                         </p>
                     </div>
                     <div class="col-md-6">
-                        <h6>I'm not online right now</h6>
+                        <h6>Não estou online no momento</h6>
                         <p>
-                            The delivery system will wait for your to come online. You have 7 days to pick up your order.
+                            O sistema de entrega esperará você ficar online. Você tem 7 dias para retirar o seu pedido.
                         </p>
                     </div>
                 </div>

@@ -4,19 +4,19 @@ use GameserverApp\Models\Order;
 
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => translate('reward_shop_history', 'Reward shop history'),
-        'description' => 'Check out your reward shop history',
+        'title' => translate('reward_shop_history', 'Histórico da Loja de Recompensas'),
+        'description' => 'Confira o histórico da sua loja de recompensas',
         'class' => 'package-single',
         'attributes' => ''
     ],
 
     'breadcrumbs' => [
         [
-            'title' => translate('reward_shop', 'Reward shop'),
+            'title' => translate('reward_shop', 'Loja de Recompensas'),
             'route' => route('shop.index')
         ],
         [
-            'title' => translate('history', 'History')
+            'title' => translate('history', 'Histórico')
         ],
     ]
 ])
@@ -26,7 +26,7 @@ use GameserverApp\Models\Order;
     <div class="row">
 
         <div class="col-md-12 text-center title">
-            <h1 class="main-title">{{translate('reward_shop_history', 'Reward shop history')}}</h1>
+            <h1 class="main-title">{{translate('reward_shop_history', 'Histórico da Loja de Recompensas')}}</h1>
         </div>
     </div>
     <div class="row">
@@ -37,8 +37,8 @@ use GameserverApp\Models\Order;
                     <thead>
                     <tr>
                         <th>Status</th>
-                        <th>Package</th>
-                        <th>Order #</th>
+                        <th>Pacote</th>
+                        <th>Nº do Pedido</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -50,19 +50,19 @@ use GameserverApp\Models\Order;
                                 switch( $item->status() )
                                 {
                                     case Order::STATUS_PROCESSING:
-                                        print '<div class="label label-default">Processing</div>';
+                                        print '<div class="label label-default">Processando</div>';
                                         break;
 
                                     case Order::STATUS_FULL_INVENTORY:
-                                        print '<div class="label label-danger">Character / Dino in inventory</div>';
+                                        print '<div class="label label-danger">Personagem / Dino no inventário</div>';
                                         break;
 
                                     case Order::STATUS_DELIVERED:
-                                        print '<div class="label label-warning">Delivered</div>';
+                                        print '<div class="label label-warning">Entregue</div>';
                                         break;
 
                                     case Order::STATUS_PICKEDUP:
-                                        print '<div class="label label-success">Picked up</div>';
+                                        print '<div class="label label-success">Retirado</div>';
                                         break;
                                 }
                                 ?>

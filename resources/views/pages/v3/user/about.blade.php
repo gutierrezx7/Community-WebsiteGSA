@@ -1,6 +1,6 @@
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => 'About - ' . $user->name(),
+        'title' => 'Sobre - ' . $user->name(),
         'description' => '',
         'class' => 'user-single'
     ]

@@ -1,7 +1,7 @@
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => 'Send tokens to player - ' . $user->name(),
-        'description' => 'Send tokens to fellow players.',
+        'title' => 'Enviar tokens para o jogador - ' . $user->name(),
+        'description' => 'Enviar tokens para outros jogadores.',
         'class' => 'user-single'
     ]
 ])
@@ -17,12 +17,12 @@
                     {{csrf_field()}}
 
                     <div class="form-group">
-                        <label>Amount</label>
+                        <label>Quantidade</label>
                         <input type="number" class="form-control" name="amount" value="{{old('amount', 1)}}">
                     </div>
 
                     <div class="form-group">
-                        <label>Message</label>
+                        <label>Mensagem</label>
                         <input type="text" maxlength="120" class="form-control" name="message" value="{{old('message')}}">
                     </div>
 
@@ -31,7 +31,7 @@
                     @include('partials.v3.button', [
                         'element' => 'button',
                         'type' => 'submit',
-                        'title' => 'Send tokens',
+                        'title' => 'Enviar tokens',
                         'class' => 'center btn-theme-rock'
                     ])
 

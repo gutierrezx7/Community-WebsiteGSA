@@ -1,6 +1,6 @@
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => 'Activity - ' . $user->name(),
+        'title' => 'Atividade - ' . $user->name(),
         'description' => '',
         'class' => 'user-single'
     ]
@@ -16,7 +16,7 @@
             </div>
         @empty
             <div class="col-md-12 text-center">
-                <em>No activity yet.</em>
+                <em>Nenhuma atividade ainda.</em>
             </div>
         @endforelse
     </div>

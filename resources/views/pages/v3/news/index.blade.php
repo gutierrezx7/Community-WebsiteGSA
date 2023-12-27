@@ -1,13 +1,13 @@
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => 'Latest news',
-        'description' => 'Find out what is happening and what is coming up!',
+        'title' => 'Últimas notícias',
+        'description' => 'Descubra o que está acontecendo e o que está por vir!',
         'class' => 'article-index'
     ],
 
     'breadcrumbs' => [
         [
-            'title' => translate('news', 'News')
+            'title' => translate('news', 'Notícias')
         ]
     ]
 ])
@@ -42,7 +42,7 @@
         </div>
     @empty
         <em>
-            No news found
+            Nenhuma notícia encontrada
         </em>
     @endforelse
 
@@ -69,7 +69,7 @@
         </div>
     @empty
         <em>
-            No news found
+            Nenhuma notícia encontrada
         </em>
     @endforelse
 

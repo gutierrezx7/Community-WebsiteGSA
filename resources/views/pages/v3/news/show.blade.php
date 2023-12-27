@@ -78,7 +78,7 @@ if($item->hasImage()) {
             <div class="col-md-12 text-center">
                 <p>
                     <em>
-                        No news found
+                        Nenhuma notícia encontrada
                     </em>
                 </p>
             </div>

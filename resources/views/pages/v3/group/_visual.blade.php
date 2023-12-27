@@ -12,9 +12,9 @@ use GameserverApp\Helpers\SiteHelper;
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Background image</label>
+                    <label>Imagem de fundo</label>
                     <p>
-                        Set a custom background image for your group.
+                        Defina uma imagem de fundo personalizada para o seu grupo.
                     </p>
 
                     @if(SiteHelper::featureEnabled('tribe_image_upload'))
@@ -35,12 +35,12 @@ use GameserverApp\Helpers\SiteHelper;
             @include('partials.v3.button', [
                 'type' => 'submit',
                 'element' => 'button',
-                'title' => translate('upload', 'Upload'),
+                'title' => translate('upload', 'Enviar'),
                 'class' => 'center'
             ])
         @else
             <div class="alert alert-warning">
-                This feature is disabled.
+                Essa funcionalidade está desativada.
             </div>
         @endif
 

@@ -1,25 +1,25 @@
 <form method="post" action="{{route('group.settings.save', $group->id)}}">
     {{csrf_field()}}
 
-    @component('partials.v3.frame', ['title' => 'Settings'])
+    @component('partials.v3.frame', ['title' => 'Configurações'])
         <div class="form-group">
-            <label>Message of the Day</label>
+            <label>Mensagem do Dia</label>
             <p>
-                Remind your team about objectives and more.<br>
-                The message will show up in-game when you or one of your fellow members logs in.
+                Lembre sua equipe sobre objetivos e muito mais.<br>
+                A mensagem será exibida no jogo quando você ou um dos seus membros fizer login.
             </p>
             <p>
-                The Message of the Day is only visible to group members.
+                A Mensagem do Dia é visível apenas para os membros do grupo.
             </p>
-            <textarea style="height:70px;" name="motd" class="form-control" placeholder="Lets gooo!!" maxlength="290">{{old('motd', $group->motd())}}</textarea>
+            <textarea style="height:70px;" name="motd" class="form-control" placeholder="Vamos lá!!" maxlength="290">{{old('motd', $group->motd())}}</textarea>
         </div>
         <hr>
         <div class="form-group">
-            <label>About your group</label>
+            <label>Sobre o seu grupo</label>
             <p>
-                Introduce your group to people visiting your group page and leave the right impression.
+                Apresente o seu grupo para as pessoas que visitam a página do seu grupo e deixe a impressão certa.
             </p>
-            <textarea style="height:150px;" name="about" class="form-control" placeholder="Hi! We're a new friendly group willing to help out. Send a message!">{{old('about', $group->about())}}</textarea>
+            <textarea style="height:150px;" name="about" class="form-control" placeholder="Oi! Somos um novo grupo amigável disposto a ajudar. Envie uma mensagem!">{{old('about', $group->about())}}</textarea>
         </div>
 
         <br>
@@ -27,7 +27,7 @@
         @include('partials.v3.button', [
             'type' => 'submit',
             'element' => 'button',
-            'title' => translate('save_settings', 'Save settings'),
+            'title' => translate('save_settings', 'Salvar configurações'),
             'class' => 'center'
         ])
     @endcomponent

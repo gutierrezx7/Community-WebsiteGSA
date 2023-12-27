@@ -12,7 +12,7 @@ use GameserverApp\Helpers\SiteHelper;
 
     'breadcrumbs' => [
         [
-            'title' => translate('reward_shop', 'Reward shop'),
+            'title' => translate('reward_shop', 'Loja de Recompensas'),
             'route' => route('shop.index')
         ],
         [
@@ -72,10 +72,10 @@ use GameserverApp\Helpers\SiteHelper;
                             <strong>
 
                                 @if($package->discount())
-                                    Price<br>
+                                    Preço<br>
                                     {!! $package->displayTokenPrice() !!}
                                 @else
-                                    Price: {!! $package->displayTokenPrice() !!}
+                                    Preço: {!! $package->displayTokenPrice() !!}
                                 @endif
 
                             </strong>
@@ -91,7 +91,7 @@ use GameserverApp\Helpers\SiteHelper;
                                 @include('partials.v3.button', [
                                     'element' => 'button',
                                     'type' => 'submit',
-                                    'title' => 'Order now &raquo;',
+                                    'title' => 'Pedir agora &raquo;',
                                     'class' => 'btn-theme-rock'
                                 ])
                             </div>
@@ -104,7 +104,7 @@ use GameserverApp\Helpers\SiteHelper;
                                 @if( SiteHelper::featureEnabled('tokens'))
                                     @include('partials.v3.button', [
                                         'route' => GameserverApp\Helpers\RouteHelper::token(),
-                                        'title' => 'Get tokens',
+                                        'title' => 'Obter tokens',
                                     ])
                                 @endif
                             </div>
@@ -151,7 +151,7 @@ use GameserverApp\Helpers\SiteHelper;
                         <div class="alert alert-warning">
                             <span>
                                 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                                Only deliverable on the <strong>{{$package->cluster}}</strong> cluster!
+                                Entrega apenas no cluster <strong>{{$package->cluster}}</strong>!
                             </span>
                         </div>
                     @endif
@@ -160,7 +160,7 @@ use GameserverApp\Helpers\SiteHelper;
                         <div class="alert alert-warning">
                             <span>
                                 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                                Only deliverable on the <strong>{{$package->gameserver}}</strong> game server!
+                                Entrega apenas no servidor de jogo <strong>{{$package->gameserver}}</strong>!
                             </span>
                         </div>
                     @endif
@@ -168,7 +168,7 @@ use GameserverApp\Helpers\SiteHelper;
                     @if(auth()->check() and $package->requiresCharacterSelect())
                         @if($package->hasCharacters())
                             <div class="text-center">
-                                <label>Deliver to:</label>
+                                <label>Entregar para:</label>
                                 <select name="character_id">
                                     @foreach($package->characters() as $character)
                                         <option @if($character->online()) selected @endif value="{{$character->id}}">
@@ -185,7 +185,7 @@ use GameserverApp\Helpers\SiteHelper;
                             </div>
                         @else
                             <div class="alert alert-danger">
-                                You do not have a character to deliver this shop pack to.
+                                Você não tem um personagem para receber este pacote da loja.
                             </div>
                         @endif
                     @endif
@@ -201,14 +201,14 @@ use GameserverApp\Helpers\SiteHelper;
                                     !auth()->user()->hasDiscordSetup()
                                 )
                                     <div class="alert alert-danger">
-                                        You need to <a href="{{route('user.settings', auth()->user()->id)}}">connect your Discord</a> to order this package.
+                                        Você precisa <a href="{{route('user.settings', auth()->user()->id)}}">conectar o seu Discord</a> para pedir este pacote.
                                     </div>
                                     <br>
                                 @else
                                     @include('partials.v3.button', [
                                         'element' => 'button',
                                         'type' => 'submit',
-                                        'title' => 'Order now &raquo;',
+                                        'title' => 'Pedir agora &raquo;',
                                         'class' => 'btn-theme-rock'
                                     ])
                                 @endif
@@ -222,7 +222,7 @@ use GameserverApp\Helpers\SiteHelper;
                                 @if( SiteHelper::featureEnabled('tokens'))
                                     @include('partials.v3.button', [
                                         'route' => GameserverApp\Helpers\RouteHelper::token(),
-                                        'title' => 'Get tokens',
+                                        'title' => 'Obter tokens',
                                     ])
                                 @endif
                             </div>
@@ -231,7 +231,7 @@ use GameserverApp\Helpers\SiteHelper;
                     </div>
                 @else
                     <div class="alert alert-info">
-                        Please <a href="{{route('auth.login')}}">login</a> to place an order.
+                        Por favor, <a href="{{route('auth.login')}}">faça login</a> para fazer um pedido.
                     </div>
                 @endif
                 <br>
@@ -239,15 +239,15 @@ use GameserverApp\Helpers\SiteHelper;
                 @component('partials.v3.frame', ['type' => 'basic'])
                     <div class="row">
                         <div class="col-md-6">
-                            <h6>When do I get it?</h6>
+                            <h6>Quando vou receber?</h6>
                             <p>
-                                Your order is delivered automatically when you are online. This usually takes less than 1 minute. You're notified in-game about the status.
+                                Seu pedido é entregue automaticamente quando você está online. Isso geralmente leva menos de 1 minuto. Você será notificado no jogo sobre o status.
                             </p>
                         </div>
                         <div class="col-md-6">
-                            <h6>I'm not online right now</h6>
+                            <h6>Não estou online no momento</h6>
                             <p>
-                                The delivery system will wait for your to come online. You have 7 days to pick up your order.
+                                O sistema de entrega esperará você ficar online. Você tem 7 dias para retirar o seu pedido.
                             </p>
                         </div>
                     </div>

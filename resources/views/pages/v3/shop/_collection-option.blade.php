@@ -38,7 +38,7 @@
                 <div class="alert alert-warning">
                     <span>
                         <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                        Only deliverable on the <strong>{{$item->cluster}}</strong> cluster!
+                        Apenas entregue no cluster <strong>{{$item->cluster}}</strong>!
                     </span>
                 </div>
             @endif
@@ -47,19 +47,16 @@
                 <div class="alert alert-warning">
                     <span>
                         <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                        Only deliverable on the <strong>{{$item->gameserver}}</strong> server!
+                        Apenas entregue no servidor <strong>{{$item->gameserver}}</strong>!
                     </span>
                 </div>
             @endif
         </div>
         <div class="col-lg-4">
-
-
-
             @if($item->tokenPrice() > 0)
                 <div class="text-center">
                     <h4>
-                        Price
+                        Preço
                         @if($item->hasLabel())
                             <div class="label label-theme top-left">
                                 {{$item->label()}}
@@ -98,16 +95,16 @@
                 <div class="col-md-12 col-sm-6 col-xs-12">
                     @if(!auth()->check())
                         <div class="alert alert-info">
-                            Login to order.
+                            Faça login para fazer o pedido.
                         </div>
                     @elseif($item->requiresDiscordConnected() and !auth()->user()->hasDiscordSetup())
                         <div class="alert alert-warning">
-                            You need to <a href="{{route('user.settings', auth()->user()->id)}}">connect your Discord</a> to order this package.
+                            Você precisa <a href="{{route('user.settings', auth()->user()->id)}}">conectar o Discord</a> para fazer o pedido deste pacote.
                         </div>
                     @elseif($item->requiresCharacterSelect())
                         @if($item->hasCharacters())
                             <div class="text-center">
-                                <label>Deliver to:</label>
+                                <label>Entregar para:</label>
                                 <select name="character_id">
                                     @foreach($item->characters() as $character)
                                         <option @if($character->online()) selected @endif value="{{$character->id}}">
@@ -126,25 +123,24 @@
                             @include('partials.v3.button', [
                                 'element' => 'button',
                                 'type' => 'submit',
-                                'title' => 'Order now &raquo;',
+                                'title' => 'Peça agora &raquo;',
                                 'class' => 'btn-theme-rock center'
                             ])
                         @else
                             <div class="alert alert-danger">
-                                You do not have a character to deliver this shop pack to.
+                                Você não tem um personagem para entregar este pacote da loja.
                             </div>
                         @endif
                     @else
                         @include('partials.v3.button', [
                             'element' => 'button',
                             'type' => 'submit',
-                            'title' => 'Order now &raquo;',
+                            'title' => 'Peça agora &raquo;',
                             'class' => 'btn-theme-rock center'
                         ])
                     @endif
                 </div>
             </div>
-
         </div>
     </div>
 </form>

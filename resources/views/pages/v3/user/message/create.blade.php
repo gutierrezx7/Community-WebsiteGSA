@@ -7,8 +7,8 @@ $user = $receiver;
 
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => translate('send_message_to', 'Send message to') . ' ' . $user->name(),
-        'description' => 'Send a message to fellow players.',
+        'title' => translate('send_message_to', 'Enviar a mensagem para') . ' ' . $user->name(),
+        'description' => 'Enviar uma mensagem para outros jogadores.',
         'class' => 'user-single'
     ]
 ])

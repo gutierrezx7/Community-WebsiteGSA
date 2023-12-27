@@ -2,12 +2,10 @@
 use PremiumARK\Sales\Sale;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
-
-    <title>Receipt</title>
-
+    <title>Recibo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
@@ -16,21 +14,21 @@ use PremiumARK\Sales\Sale;
             background-image: none;
             font-size: 12px;
         }
-        address{
-            margin-top:15px;
+        address {
+            margin-top: 15px;
         }
         h2 {
-            font-size:28px;
-            color:#cccccc;
+            font-size: 28px;
+            color: #cccccc;
         }
         .container {
-            padding-top:30px;
+            padding-top: 30px;
         }
         .invoice-head td {
             padding: 0 8px;
         }
-        .invoice-body{
-            background-color:transparent;
+        .invoice-body {
+            background-color: transparent;
         }
         .logo {
             padding-bottom: 10px;
@@ -60,7 +58,7 @@ use PremiumARK\Sales\Sale;
     <table style="margin-left: auto; margin-right: auto" width="550">
         <tr valign="top">
             <td width="375">
-{{--                <img style="width:250px;" src="{{$logo}}">--}}
+            {{--                <img style="width:250px;" src="{{$logo}}">--}}
                 <br>
                 <br>
                 <br>
@@ -75,7 +73,7 @@ use PremiumARK\Sales\Sale;
                 <br>
             </td>
 
-            <!-- Organization Name / Image -->
+            <!-- Nome / Logotipo da Organização -->
             <td align="left">
                 {!! $sellerDetails !!}
             </td>
@@ -83,36 +81,36 @@ use PremiumARK\Sales\Sale;
         <tr valign="top">
             <td>
                 <p>
-                    <strong>Receipt ID:</strong> {{ $invoice->id }}<br>
-                    <strong>Status:</strong> PAID
+                    <strong>ID do Recibo:</strong> {{ $invoice->id }}<br>
+                    <strong>Status:</strong> PAGO
                 </p>
             </td>
 
-            <!-- Organization Name / Date -->
+            <!-- Nome / Data da Organização -->
             <td>
                 <p>
-                    <strong>Date:</strong> {{ $invoice->transactionDate()->toFormattedDateString() }} (UTC)<br>
+                    <strong>Data:</strong> {{ $invoice->transactionDate()->toFormattedDateString() }} (UTC)<br>
                 </p>
             </td>
         </tr>
         <tr valign="top">
             <td colspan="2" >
 
-                <!-- Invoice Table -->
+                <!-- Tabela do Recibo -->
                 <table width="100%" class="table" border="0">
                     <tr>
-                        <th align="left">Description</th>
-                        <th align="right">Amount</th>
+                        <th align="left">Descrição</th>
+                        <th align="right">Valor</th>
                     </tr>
 
-                    <!-- Display The Invoice Charges -->
+                    <!-- Exibe as Cobranças do Recibo -->
 
                     <tr>
                         <td>
                             @if($invoice->isSubscriptionSale())
-                                Subscription:
+                                Assinatura:
                             @else
-                                Purchase:
+                                Compra:
                             @endif
 
                             {{$invoice->relatable()->name()}}
@@ -120,13 +118,13 @@ use PremiumARK\Sales\Sale;
                             @if ($invoice->hasDiscount())
                                 <br>
 
-                                (Incl. {{ $invoice->discount() }}% discount)
+                                (Incluindo {{ $invoice->discount() }}% de desconto)
                             @endif
                         </td>
 
                         <td>{{$invoice->currency()}} {{$invoice->amount()}}</td>
                     </tr>
-                    <!-- Display The Final Total -->
+                    <!-- Exibe o Total Final -->
                     <tr style="border-top:2px solid #000;">
                         <td style="text-align: right;"><strong>Total</strong></td>
                         <td>

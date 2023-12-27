@@ -18,7 +18,7 @@
                 auth()->user()->isGroupMember($group) and
                 !$group->discordChannelSetup()
             )
-                <div class="alert alert-info">Read the logs on your group Discord server. <a href="{{route('group.settings', $group->id)}}">Setup Discord &raquo;</a></div>
+                <div class="alert alert-info">Leia os registros no servidor Discord do seu grupo. <a href="{{route('group.settings', $group->id)}}">Configurar Discord &raquo;</a></div>
                 <br>
             @endif
 
@@ -26,8 +26,8 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Message</th>
+                        <th>Data</th>
+                        <th>Mensagem</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -51,7 +51,7 @@
                         @empty
                             <tr>
                                 <td colspan="2">
-                                    <em>No logs...</em>
+                                    <em>Sem registros...</em>
                                 </td>
                             </tr>
                         @endforelse

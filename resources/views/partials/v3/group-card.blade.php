@@ -13,7 +13,7 @@
                 <div class="more">
                     @include('partials.v3.button', [
                         'route' => route('group.show', $group->id),
-                        'title' => translate('more_details', 'More details'),
+                        'title' => translate('more_details', 'Mais detalhes'),
                         'class' => 'small'
                     ])
                 </div>
@@ -29,7 +29,7 @@
                 <tr>
                     <th>Name</th>
                     @if($group->hasGame() and $group->game->supportLevel())
-                        <th width="20px">Level</th>
+                        <th width="20px">Nível</th>
                     @endif
                 </tr>
                 </thead>
@@ -58,8 +58,8 @@
                             <tr>
                                 <td colspan="4" class="text-right more">
                                     <a href="{{route('group.show', $group->id)}}"
-                                       onClick="ga('send', 'event', 'Button', 'click', 'See all online players');">
-                                        See all {{ GameserverApp\Helpers\SiteHelper::groupName()}} members &raquo;
+                                       onClick="ga('send', 'event', 'Button', 'click', 'Ver todos os jogadores Online');">
+                                        Veja todos os {{ GameserverApp\Helpers\SiteHelper::groupName()}} membros &raquo;
                                     </a>
                                 </td>
                             </tr>

@@ -1,6 +1,6 @@
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => translate('token_transactions', 'Token transactions'),
+        'title' => translate('token_transactions', 'Transações de Tokens'),
         'description' => '',
         'class' => ''
     ],
@@ -11,7 +11,7 @@
             'route' => route('user.settings', 'me')
         ],
         [
-            'title' => translate('token_transactions', 'Token transactions')
+            'title' => translate('token_transactions', 'Transações de Tokens')
         ]
     ]
 ])
@@ -29,7 +29,7 @@
         <div class="col-sm-4">
             @include('partials.v3.button', [
                 'route' => GameserverApp\Helpers\RouteHelper::token(),
-                'title' => 'Get tokens',
+                'title' => 'Obter tokens',
             ])
         </div>
     </div>
@@ -41,11 +41,11 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Type</th>
+                        <th>Data</th>
+                        <th>Tipo</th>
                         <th>+/-</th>
                         <th></th>
-                        <th width="50%">Description</th>
+                        <th width="50%">Descrição</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -55,15 +55,15 @@
                             <td>{{$transaction->date('created_at')->format('d-m-Y H:i')}}</td>
                             <td>
                                 @if( $transaction->transactionType() == 'purchase' )
-                                    <div class="label label-default">Token purchase</div>
+                                    <div class="label label-default">Compra de Tokens</div>
                                 @elseif( $transaction->transactionType() == 'shop' )
-                                    <div class="label label-info">Shop purchase</div>
+                                    <div class="label label-info">Compra na Loja</div>
                                 @elseif( $transaction->transactionType() == 'player' )
-                                    <div class="label label-warning">Player to Player</div>
+                                    <div class="label label-warning">Jogador para Jogador</div>
                                 @elseif( $transaction->transactionType() == 'admin' )
                                     <div class="label label-champ">Admin</div>
                                 @else
-                                    <div class="label label-default">Unknown</div>
+                                    <div class="label label-default">Desconhecido</div>
                                 @endif
                             </td>
                             <td>
@@ -81,14 +81,14 @@
                             <td>
                                 @if( $transaction->transactionValue() > 0 )
                                     @if(is_null($transaction->sender) )
-                                        <em>from</em>
+                                        <em>de</em>
                                         <strong>{{GameserverApp\Helpers\SiteHelper::name()}}</strong>
                                     @else
-                                        <em>from</em>
+                                        <em>de</em>
                                         <strong>{!! $transaction->sender->showLink() !!}</strong>
                                     @endif
                                 @elseif(isset($transaction->sender))
-                                    <em>to</em>
+                                    <em>para</em>
                                     <strong>{!! $transaction->sender->showLink() !!}</strong>
                                 @else
                                     -
@@ -99,7 +99,7 @@
                     @empty
                         <tr>
                             <td colspan="5" class="text-center">
-                                <em>No transactions found</em>
+                                <em>Nenhuma transação encontrada</em>
                             </td>
                         </tr>
 
