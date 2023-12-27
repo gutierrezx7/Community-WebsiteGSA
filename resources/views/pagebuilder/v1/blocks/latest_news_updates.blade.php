@@ -1,10 +1,10 @@
 <div class="news-activity">
     <h1>
-        Latest news & updates
+        Últimas notícias e atualizações
     </h1>
 
     <ul>
-        @forelse($lastNewsPosts as $news )
+        @forelse($lastNewsPosts as $news)
             <li>
                 <article itemscope itemtype="http://schema.org/Article">
                     <div class="title-category">
@@ -35,7 +35,7 @@
     </ul>
     <a href="{{route('news.index')}}" class="btn btn-theme btn-theme-rock ">
         <span>
-            All news &raquo;
+            Todas as notícias &raquo;
         </span>
     </a>
 </div>

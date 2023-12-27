@@ -1,13 +1,13 @@
 @component('partials.v3.frame', [
-    'title' => '<i class="fa fa-heart"></i> Recent donations',
+    'title' => '<i class="fa fa-heart"></i> Doações Recentes',
     'class' => 'no-padding center-title no-bottom-margin',
     'content_style' => 'min-height: 300px;'
 ])
     <table class="table">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Amount</th>
+            <th>Nome</th>
+            <th>Quantia</th>
         </tr>
         </thead>
         <tbody>
@@ -24,7 +24,7 @@
             <tr>
                 <td colspan="5" class="text-center">
                     <br><br>
-                    No donations yet!
+                    Nenhuma doação ainda!
                     <br><br>
                     <br>
                 </td>

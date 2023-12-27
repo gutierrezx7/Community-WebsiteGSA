@@ -9,5 +9,5 @@ if(isset($block['title']) and !empty($block['title'])) {
 ?>
 
 @component('partials.v3.frame', $settings)
-    <div class="stat_canvas" data-value="{{$value}}" data-route="{{route('stat.index', 'new-players-last-7-days')}}"><span>Loading...</span></div>
+    <div class="stat_canvas" data-value="{{$value}}" data-route="{{route('stat.index', 'new-players-last-7-days')}}"><span>Carregando...</span></div>
 @endcomponent

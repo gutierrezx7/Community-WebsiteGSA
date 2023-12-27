@@ -1,5 +1,5 @@
 @component('partials.v3.frame', [
-    'title' => '<i class="fa fa-thumbs-up"></i> Top 5 voters',
+    'title' => '<i class="fa fa-thumbs-up"></i> Top 5 Votantes',
     'class' => 'no-padding center-title no-bottom-margin',
     'content_style' => 'min-height: 300px;'
 ])
@@ -7,8 +7,8 @@
         <thead>
         <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Total votes</th>
+            <th>Nome</th>
+            <th>Total de Votos</th>
         </tr>
         </thead>
         <tbody>
@@ -33,7 +33,7 @@
             <tr>
                 <td colspan="5" class="text-center">
                     <br><br>
-                    No votes yet!
+                    Nenhum voto ainda!
                     <br><br>
                     <br>
                 </td>

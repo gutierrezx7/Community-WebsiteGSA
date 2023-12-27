@@ -1,13 +1,13 @@
 @component('partials.v3.frame', [
-    'title' => '<i class="fa fa-hand-spock-o" aria-hidden="true"></i> Fresh survivors',
+    'title' => '<i class="fa fa-hand-spock-o" aria-hidden="true"></i> Sobreviventes Novos',
     'class' => 'no-padding center-title no-bottom-margin',
     'content_style' => 'min-height: 300px;'
 ])
     <table class="table">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Level</th>
+            <th>Nome</th>
+            <th>Nível</th>
             <th></th>
         </tr>
         </thead>
@@ -34,7 +34,7 @@
                 <tr>
                     <td colspan="4" class="text-center">
                         <br><br>
-                        No characters yet!
+                        Nenhum personagem ainda!
                         <br><br>
                         <br>
                     </td>
@@ -44,7 +44,7 @@
             {{--<tr>--}}
                 {{--<td colspan="4" class="text-right">--}}
                     {{--<a href="{{route('halloffame.newbies')}}">--}}
-                        {{--See all newbies &raquo;--}}
+                        {{--Ver todos os novatos &raquo;--}}
                     {{--</a>--}}
                 {{--</td>--}}
             {{--</tr>--}}

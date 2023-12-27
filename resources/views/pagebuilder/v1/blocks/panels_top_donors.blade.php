@@ -1,5 +1,5 @@
 @component('partials.v3.frame', [
-    'title' => '<i class="fa fa-heart"></i> Top 5 donors',
+    'title' => '<i class="fa fa-heart"></i> Top 5 Doadores',
     'class' => 'no-padding center-title no-bottom-margin',
     'content_style' => 'min-height: 300px;'
 ])
@@ -7,8 +7,8 @@
         <thead>
         <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Total donated</th>
+            <th>Nome</th>
+            <th>Total doado</th>
         </tr>
         </thead>
         <tbody>
@@ -33,7 +33,7 @@
             <tr>
                 <td colspan="5" class="text-center">
                     <br><br>
-                    No donors yet!
+                    Nenhum doador ainda!
                     <br><br>
                     <br>
                 </td>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         @include('layouts.v3._meta')
     </head>

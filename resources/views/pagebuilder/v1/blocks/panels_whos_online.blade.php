@@ -1,10 +1,10 @@
 <?php
-$title = 'Who\'s online?';
+$title = 'Quem está online?';
 
-if($totalOnline == 1) {
-    $title .= ' <span class="label label-theme alternative">1 player online</span>';
+if ($totalOnline == 1) {
+    $title .= ' <span class="label label-theme alternative">1 jogador online</span>';
 } else {
-    $title .= ' <span class="label label-theme alternative">' . $totalOnline . ' players online</span>';
+    $title .= ' <span class="label label-theme alternative">' . $totalOnline . ' jogadores online</span>';
 }
 ?>
 
@@ -16,16 +16,16 @@ if($totalOnline == 1) {
     <table class="table">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Level</th>
-            <th>Playing on</th>
+            <th>Nome</th>
+            <th>Nível</th>
+            <th>Jogando em</th>
         </tr>
         </thead>
         <tbody>
 
-        @if( $characters->count() > 0 )
+        @if($characters->count() > 0)
 
-            @foreach( $characters->slice(0,5) as $character )
+            @foreach($characters->slice(0, 5) as $character)
                 <tr>
                     <td>
                         {!! $character->showLink([
@@ -43,11 +43,11 @@ if($totalOnline == 1) {
                 </tr>
             @endforeach
 
-            {{--@if( count($characters['online']) > 5 )--}}
+            {{--@if(count($characters['online']) > 5)--}}
                 {{--<tr>--}}
                     {{--<td colspan="4" class="text-right">--}}
                         {{--<a href="{{route('halloffame.online')}}">--}}
-                            {{--See all online players &raquo;--}}
+                            {{--Ver todos os jogadores online &raquo;--}}
                         {{--</a>--}}
                     {{--</td>--}}
                 {{--</tr>--}}
@@ -57,7 +57,7 @@ if($totalOnline == 1) {
             <tr>
                 <td colspan="4" class="text-center">
                     <br><br>
-                    Ow dear.. No characters online!
+                    Oh querido.. Nenhum personagem online!
                     <br><br>
                     <br>
                 </td>

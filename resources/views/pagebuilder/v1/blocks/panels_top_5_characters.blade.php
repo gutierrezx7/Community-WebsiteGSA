@@ -1,5 +1,5 @@
 @component('partials.v3.frame', [
-    'title' => '<i class="fa fa-trophy"></i> Top 5 characters',
+    'title' => '<i class="fa fa-trophy"></i> Top 5 Personagens',
     'class' => 'no-padding center-title no-bottom-margin',
     'content_style' => 'min-height: 300px;'
 ])
@@ -7,9 +7,9 @@
         <thead>
         <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Level</th>
-            <th>Server</th>
+            <th>Nome</th>
+            <th>Nível</th>
+            <th>Servidor</th>
         </tr>
         </thead>
         <tbody>
@@ -37,7 +37,7 @@
             <tr>
                 <td colspan="5" class="text-center">
                     <br><br>
-                    No characters yet!
+                    Nenhum personagem ainda!
                     <br><br>
                     <br>
                 </td>

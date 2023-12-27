@@ -41,7 +41,7 @@
                 <div class="col-md-12 content">
                     <span>&copy; 2015 - {{date('Y')}}</span>
                     <i>//</i>
-                    <a href="https://www.gameserverapp.com/?camp=fe&grp={{GameserverApp\Helpers\SiteHelper::slug()}}" target="_blank" rel="FOLLOW">Powered by GameServerApp.com</a>
+                    <a href="https://www.gameserverapp.com/?camp=fe&grp={{GameserverApp\Helpers\SiteHelper::slug()}}" target="_blank" rel="FOLLOW">Dev GSA Fork ExpertLevelNetwork</a>
 
                     @if(config('app.debug'))
                         <span>
@@ -55,7 +55,7 @@
                                 ?>
 
                                 <select name="theme" onchange="submit();">
-                                    <option @if($overrideCookie === '0') selected @endif value="0">- Inherit from settings -</option>
+                                    <option @if($overrideCookie === '0') selected @endif value="0">- Herdar das configurações -</option>
 
                                     @foreach(themes() as $dir)
                                         <option  @if($overrideCookie === $dir) selected @endif value="{{$dir}}">{{$dir}}</option>

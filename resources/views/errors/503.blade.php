@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Be right back.</title>
+        <title>Volto já.</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="refresh" content="60">
@@ -73,9 +73,9 @@
     <body>
         <div class="container">
             <div class="content">
-                <h1>Be right back!</h1>
-                <h3>Updating the site...</h3>
-                <div class="small">Page will automatically reload when update is done (50 sec).</div>
+                <h1>Volto já!</h1>
+                <h3>Atualizando o site...</h3>
+                <div class="small">A página será recarregada automaticamente quando a atualização estiver concluída (50 segundos).</div>
                 <div id="_giphy_tv"></div>
                 <script>
                     var _giphy_tv_tag="cat";

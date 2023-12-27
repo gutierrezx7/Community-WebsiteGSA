@@ -4,15 +4,15 @@
 @endif
 
 <?php
-$footer = '<button type="submit" ' . (!auth()->check() ? 'disabled' : '' ) . ' class="btn btn-theme small"><span>Submit</span></button>';
+$footer = '<button type="submit" ' . (!auth()->check() ? 'disabled' : '' ) . ' class="btn btn-theme small"><span>Enviar</span></button>';
 ?>
 
 @component('partials.v3.frame', ['title' => $value, 'class' => 'no-bottom-margin', 'footer' => $footer])
 
     @if(!auth()->check())
         <div class="alert alert-warning">
-            Please <a href="{{route('auth.login')}}">login</a> to submit your report.<br>
-            You will be requested to log into your steam account, so we can verify you own the Steam account.
+            Por favor, <a href="{{route('auth.login')}}">faça login</a> para enviar seu relatório.<br>
+            Será solicitado que você faça login na sua conta Steam para que possamos verificar que você possui a conta Steam.
         </div>
     @endif
 
@@ -20,7 +20,7 @@ $footer = '<button type="submit" ' . (!auth()->check() ? 'disabled' : '' ) . ' c
     <hr>
 
     <div class="form-group">
-        <label>Select type</label>
+        <label>Selecione o tipo</label>
         <select class="form-control" name="type">
             @foreach($block['types'] as $reportType)
                 <option value="{{$reportType['id']}}" @if(old('types') == $reportType['id']) selected @endif>{{$reportType['name']}}</option>
@@ -30,16 +30,16 @@ $footer = '<button type="submit" ' . (!auth()->check() ? 'disabled' : '' ) . ' c
 
     @isset($block['character'])
         <div class="form-group">
-            <label>Reporting about</label>
+            <label>Relatando sobre</label>
             <select class="form-control" name="reporting_char">
-                <option value=""> - Nobody - </option>
+                <option value=""> - Ninguém - </option>
                 <option value="{{$block['character']['id']}}" selected>{{$block['character']['name']}}</option>
             </select>
         </div>
     @endif
 
     <div class="form-group">
-        <label>What do you want to report (required)</label>
+        <label>O que você deseja relatar (obrigatório)</label>
         <textarea name="comment" style="height:100px;" class="form-control">{{old('comment')}}</textarea>
     </div>
 

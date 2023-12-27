@@ -54,7 +54,7 @@ use GameserverApp\Helpers\SiteHelper;
                             @if($navChar->groupAdmin($group))
                                 <li>
                                     <a href="{{route('group.settings', $group->id)}}">
-                                        Group settings
+                                        Configurações do Grupo
                                     </a>
                                 </li>
                             @endif
@@ -64,7 +64,7 @@ use GameserverApp\Helpers\SiteHelper;
                     @elseif($navChar)
                         <li>
                             <a href="/{{GameserverApp\Helpers\RouteHelper::inspector()}}?search_type=tribe">
-                                Find a {{ GameserverApp\Helpers\SiteHelper::groupName()}} &raquo;
+                                Encontre um {{ GameserverApp\Helpers\SiteHelper::groupName()}} &raquo;
                             </a>
                         </li>
 
@@ -82,7 +82,7 @@ use GameserverApp\Helpers\SiteHelper;
             <li>
                 <a href="{{route('shop.index')}}" class="{{ GameserverApp\Helpers\RouteHelper::isCurrentRoute('shop.index') ? 'orange' : '' }}">
                     <i class="fa fa-gift" aria-hidden="true"></i> &nbsp;
-                    Reward shop
+                    Loja de Recompensas
                 </a>
             </li>
         @endif
@@ -91,7 +91,7 @@ use GameserverApp\Helpers\SiteHelper;
             <li>
                 <a href="{{route('supporter-tier.index')}}" class="{{ GameserverApp\Helpers\RouteHelper::isCurrentRoute('supporter-tier.index') ? 'orange' : '' }}">
                     <i class="fa fa-trophy" aria-hidden="true"></i> &nbsp;
-                    Supporter Tiers
+                    Tiers de Apoiador
                 </a>
             </li>
         @endif
@@ -107,7 +107,7 @@ use GameserverApp\Helpers\SiteHelper;
         @if(SiteHelper::featureEnabled('user_page'))
             <li>
                 <a href="{{route('user.show', auth()->id())}}" class="{{ GameserverApp\Helpers\RouteHelper::isCurrentRoute('user.show', auth()->id()) ? 'orange' : '' }}">
-                    Account profile
+                    Perfil da Conta
                 </a>
             </li>
         @endif
@@ -116,7 +116,7 @@ use GameserverApp\Helpers\SiteHelper;
             <li class="hidden-sm">
                 <a href="{{route('message.index', auth()->id())}}"
                    class="inbox {{ ( Request::is('message/*')) ? 'active' : '' }}">
-                    Messages
+                    Mensagens
                     <span class="label label-default right">
                        {{auth()->user()->unreadMessagesCount()}}
                     </span>
@@ -139,7 +139,7 @@ use GameserverApp\Helpers\SiteHelper;
         @if(SiteHelper::featureEnabled('shop'))
             <li>
                 <a href="{{route('user.deliveries', auth()->id())}}" class="{{ GameserverApp\Helpers\RouteHelper::isCurrentRoute('user.deliveries', auth()->id()) ? 'orange' : '' }}">
-                    Deliveries
+                    Entregas
                 </a>
             </li>
         @endif
@@ -147,25 +147,25 @@ use GameserverApp\Helpers\SiteHelper;
         @if(SiteHelper::featureEnabled('supporter_tiers'))
             <li>
                 <a href="{{route('subscription.index', auth()->id())}}" class="{{ GameserverApp\Helpers\RouteHelper::isCurrentRoute('subscription.index', auth()->id()) ? 'orange' : '' }}">
-                    Subscriptions
+                    Assinaturas
                 </a>
             </li>
             <li>
                 <a href="{{route('user.invoices', auth()->id())}}" class="{{ GameserverApp\Helpers\RouteHelper::isCurrentRoute('user.invoices', auth()->id()) ? 'orange' : '' }}">
-                    Invoices
+                    Faturas
                 </a>
             </li>
         @endif
 
         <li>
             <a href="{{route('user.settings', auth()->id())}}" class="{{ GameserverApp\Helpers\RouteHelper::isCurrentRoute('user.settings', auth()->id()) ? 'orange' : '' }}">
-                Settings
+                Configurações
             </a>
         </li>
         <li role="separator" class="divider"></li>
         <li>
             <a href="{{route('auth.logout')}}">
-                Logout
+                Sair
             </a>
         </li>
     </ul>

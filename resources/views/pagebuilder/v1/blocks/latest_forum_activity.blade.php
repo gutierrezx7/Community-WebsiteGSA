@@ -4,7 +4,7 @@ use GameserverApp\Helpers\SiteHelper;
 
 <div class="forum-activity">
     <h1>
-        Latest forum activity
+        Última atividade no fórum
     </h1>
 
     <ul>
@@ -33,23 +33,23 @@ use GameserverApp\Helpers\SiteHelper;
                         </time>
                         <span class="author" itemprop="author">
                             @if(SiteHelper::featureEnabled('user_page'))
-                                by {!! $thread->lastPost->author->showLink() !!}
+                                por {!! $thread->lastPost->author->showLink() !!}
                             @else
-                                by {!! $thread->lastPost->author->showName() !!}
+                                por {!! $thread->lastPost->author->showName() !!}
                             @endif
                         </span>
                     </div>
                 </article>
             </li>
         @empty
-            <li><em>No posts found</em></li>
+            <li><em>Nenhuma postagem encontrada</em></li>
         @endforelse
     </ul>
     @if($lastForumThreads)
 
         <a href="{{route('forum.index')}}" class="btn btn-theme btn-theme-rock">
             <span>
-                Forum &raquo;
+                Fórum &raquo;
             </span>
         </a>
     @endif

@@ -4,15 +4,15 @@
 @endif
 
 <?php
-$footer = '<button type="submit" ' . (!auth()->check() ? 'disabled' : '' ) . ' class="btn btn-theme small"><span>Submit</span></button>';
+$footer = '<button type="submit" ' . (!auth()->check() ? 'disabled' : '' ) . ' class="btn btn-theme small"><span>Enviar</span></button>';
 ?>
 
 @component('partials.v3.frame', ['title' => $block['name'], 'class' => 'formbuilder no-bottom-margin', 'footer' => $footer])
 
     @if(!auth()->check())
         <div class="alert alert-warning">
-            Please <a href="{{route('auth.login')}}">login</a> to submit this form.<br>
-            You will be requested to log into your steam account, so we can verify you own the Steam account.
+            Por favor, <a href="{{route('auth.login')}}">faça login</a> para enviar este formulário.<br>
+            Você será solicitado a fazer login na sua conta Steam, para que possamos verificar que você é o proprietário da conta Steam.
         </div>
     @elseif(
         isset($block['form_type']) and
@@ -29,7 +29,7 @@ $footer = '<button type="submit" ' . (!auth()->check() ? 'disabled' : '' ) . ' c
             <div class="alert alert-warning">
                 <i class="fa fa-exclamation-triangle" style="display:inline-block" aria-hidden="true"></i>
                 <span style="display:inline-block">
-                    You must have a confirmed <a href="{{route('user.settings', auth()->user()->id)}}">email address setup</a> to submit this form. <em><a href="{{route('user.settings', auth()->user()->id)}}">Privacy information</a></em>
+                    Você deve ter um endereço de e-mail confirmado <a href="{{route('user.settings', auth()->user()->id)}}">configurado</a> para enviar este formulário. <em><a href="{{route('user.settings', auth()->user()->id)}}">Informações de privacidade</a></em>
                 </span>
             </div>
         @elseif(
@@ -37,14 +37,14 @@ $footer = '<button type="submit" ' . (!auth()->check() ? 'disabled' : '' ) . ' c
             auth()->user()->emailConfirmed()
         )
             <div class="alert alert-success">
-                Updates are sent to your email address.
+                As atualizações serão enviadas para o seu endereço de e-mail.
             </div>
         @endif
 
         @if(!auth()->user()->hasDiscordSetup())
             <div class="alert alert-warning">
                 <i class="fa fa-exclamation-triangle" style="display:inline-block" aria-hidden="true"></i>
-                Please <a href="{{route('user.settings', auth()->user()->id)}}">connect your Discord</a> to continue.
+                Por favor, <a href="{{route('user.settings', auth()->user()->id)}}">conecte o seu Discord</a> para continuar.
             </div>
         @endif
     @endif
