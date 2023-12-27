@@ -1,7 +1,7 @@
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => 'Calendar events',
-        'description' => 'Find out what is happening and what is coming up!',
+        'title' => 'Eventos do calendário',
+        'description' => 'Descubra o que está acontecendo e o que está por vir!',
         'class' => 'calendar'
     ],
 
