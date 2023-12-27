@@ -1,3 +1,14 @@
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: navigator.language || navigator.userLanguage,
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
 <?php
 
 use GameserverApp\Helpers\SiteHelper;
@@ -60,7 +71,13 @@ use Illuminate\Support\Facades\Cookie;
                                 </a>
                             </li>
                         @endif
-
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span>Lang</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" id="google_translate_element"></ul>
+                        </li>
                         @if(GameserverApp\Helpers\RouteHelper::support() != false)
                             <li>
                                 <a href="{{GameserverApp\Helpers\RouteHelper::support()}}" class="social-login">
