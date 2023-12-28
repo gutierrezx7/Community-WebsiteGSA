@@ -5,7 +5,7 @@ use GameserverApp\Helpers\SiteHelper;
 @extends('layouts.v3.default', [
     'page' => [
         'title' => translate('reward_shop', 'Loja de Recompensas'),
-        'description' => 'Your orders are delivered in real-time.',
+        'description' => 'Seus pedidos são entregues em tempo real.',
         'class' => 'loja'
     ],
 

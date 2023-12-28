@@ -54,7 +54,7 @@ class ShopController extends Controller
         if($request->has('status') == 'success') {
             session()->flash('alert', [
                 'status'  => 'success',
-                'message' => 'Thank you for your order! Your tokens are being processed.',
+                'message' => 'Obrigado pelo seu pedido! Seus tokens estão sendo processados.',
                 'stay'    => true
             ]);
         }
