@@ -1,4 +1,4 @@
-{{-- $category is passed as NULL to the master layout view to prevent it from showing in the breadcrumbs --}}
+{{-- $category é passado como NULL para a view de layout principal para evitar que ele seja exibido nas migalhas de pão --}}
 @extends('forum::master', ['category' => null])
 
 @section('content')
@@ -10,7 +10,7 @@
             @endcan
         </div>
         <div class="col-md-6 text-center">
-            <h2>Forum</h2>
+            <h2>Fórum</h2>
         </div>
         <div class="col-md-3">
 
@@ -24,15 +24,15 @@
                 @include('forum::custom.category')
             @empty
                 <div class="alert alert-info">
-                    Nothing here yet!<br>
-                    Follow instructions below to get started:<br>
+                    Nada aqui ainda!<br>
+                    Siga as instruções abaixo para começar:<br>
 
                     <ol>
                         <li>
-                            <a href="https://docs.gameserverapp.com/dashboard/admin_teams#manage-admins" target="_blank">Link Community website account to your GSA Dashboard account</a>
+                            <a href="https://docs.gameserverapp.com/dashboard/admin_teams#manage-admins" target="_blank">Vincule sua conta do site da comunidade à sua conta do Painel GSA</a>
                         </li>
                         <li>
-                            <a href="https://docs.gameserverapp.com/dashboard/admin_teams/#grant-forum-permissions" target="_blank">Grant forum permissions to Admin teams</a>
+                            <a href="https://docs.gameserverapp.com/dashboard/admin_teams/#grant-forum-permissions" target="_blank">Conceda permissões de fórum às equipes de administradores</a>
                         </li>
                     </ol>
 
