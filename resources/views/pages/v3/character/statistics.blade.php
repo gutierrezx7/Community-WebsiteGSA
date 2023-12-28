@@ -1,6 +1,6 @@
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => 'Statistics - ' . $character->name(),
+        'title' => 'Estatísticas - ' . $character->name(),
         'description' => '',
         'class' => 'character-single',
         //'bg' => $character->backgroundImage()
@@ -23,7 +23,7 @@
                         <div class="col-md-6">
 
                             @include('pages.v3.character._graph', [
-                                'title' => 'Level progress',
+                                'title' => 'Progresso do nível',
                                 'data' => $stats['levels-gained']
                             ])
 
@@ -34,7 +34,7 @@
                         <div class="col-md-6">
 
                             @include('pages.v3.character._graph', [
-                                'title' => 'EXP progress',
+                                'title' => 'Progresso de EXP',
                                 'data' => $stats['xp-gained']
                             ])
 
@@ -47,7 +47,7 @@
                 <div class="col-md-12">
 
                     @include('pages.v3.character._graph', [
-                        'title' => 'Hours played',
+                        'title' => 'Horas jogadas',
                         'data' => $stats['hours-played']
                     ])
 

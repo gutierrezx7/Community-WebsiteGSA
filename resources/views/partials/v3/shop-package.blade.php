@@ -2,11 +2,11 @@
     <div class="purchase-package package-small">
         @if($item->cluster)
             <div class="label label-theme top-left">
-                {{$item->cluster}} only
+                Apenas {{$item->cluster}}
             </div>
         @elseif($item->gameserver)
             <div class="label label-theme top-left">
-                {{$item->gameserver}} only
+                Apenas {{$item->gameserver}}
             </div>
         @elseif($item->hasLabel())
             <div class="label label-theme top-left">
@@ -46,17 +46,17 @@
                 </div>
             @elseif($item->isCollection())
                 <div class="collection">
-                    <div class="label label-theme">Collection</div>
+                    <div class="label label-theme">Coleção</div>
                 </div>
             @endif
         </a>
 
-    {{--    <a class="link" href="{{route('shop.show', $item->id)}}">{{translate('details', 'Details')}} &raquo;</a>--}}
+    {{--    <a class="link" href="{{route('shop.show', $item->id)}}">{{translate('details', 'Detalhes')}} &raquo;</a>--}}
         <?php
-        $text = translate('details', 'Details');
+        $text = translate('details', 'Detalhes');
 
         if($item->isCollection()) {
-            $text = translate('see_items', 'See items');
+            $text = translate('see_items', 'Ver itens');
         }
         ?>
         @include('partials.v3.button', [

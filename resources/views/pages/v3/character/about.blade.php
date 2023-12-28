@@ -1,6 +1,6 @@
 @extends('layouts.v3.default', [
     'page' => [
-        'title' => 'About - ' . $character->name(),
+        'title' => 'Sobre - ' . $character->name(),
         'description' => '',
         'class' => 'character-single about',
         //'bg' => $character->backgroundImage()
@@ -22,7 +22,7 @@
                     'type' => 'basic',
                     'class' => 'text-center'
                 ])
-                    <em>{{$character->name()}} has no image yet.</em>
+                    <em>{{$character->name()}} ainda não possui uma imagem.</em>
                 @endcomponent
             @endif
 
@@ -30,12 +30,12 @@
         <div class="col-md-8">
 
             @component('partials.v3.frame', [
-                'title' => 'About ' . $character->name()
+                'title' => 'Sobre ' . $character->name()
             ])
                 @if($character->hasAbout())
                     {!! Markdown::convertToHtml($character->about()) !!}
                 @else
-                    <em>{{$character->name()}} has no about information yet.</em>
+                    <em>{{$character->name()}} ainda não possui informações sobre si.</em>
                 @endif
 
                 @if(
@@ -44,7 +44,7 @@
                 )
                     <br><br>
                     <div class="edit">
-                        <a class="btn btn-theme small" href="{{route('character.about.edit', $character->id)}}"><span>Edit</span></a>
+                        <a class="btn btn-theme small" href="{{route('character.about.edit', $character->id)}}"><span>Editar</span></a>
                     </div>
                 @endif
             @endcomponent

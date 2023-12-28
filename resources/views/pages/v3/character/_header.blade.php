@@ -20,7 +20,7 @@ use GameserverApp\Helpers\SiteHelper;
                             $character->game->supportLevel()
                         )
                             <div class="level">
-                                Level <strong>{{$character->level}}</strong>
+                                Nível <strong>{{$character->level}}</strong>
                             </div>
                             <span class="divider">|</span>
                         @endif
@@ -28,15 +28,15 @@ use GameserverApp\Helpers\SiteHelper;
                         @if(SiteHelper::featureEnabled('player_status'))
                             <div class="current-status">
                                 @if($character->online())
-                                    Online since
+                                    Online desde
                                 @else
-                                    Last seen
+                                    Última vez visto
                                 @endif
 
                                 @if( !is_null( $character->status_since ) )
                                     {{$character->date('status_since')->diffForHumans()}}
                                 @else
-                                    Never
+                                    Nunca
                                 @endif
                             </div>
                             <span class="divider">|</span>
@@ -48,7 +48,7 @@ use GameserverApp\Helpers\SiteHelper;
                         )
 
                             <div class="hours-played">
-                                Played <strong>{{$character->hoursPlayed()}} hours</strong>
+                                Jogado <strong>{{$character->hoursPlayed()}} horas</strong>
                             </div>
                             <span class="divider">|</span>
                         @endif
@@ -78,14 +78,14 @@ use GameserverApp\Helpers\SiteHelper;
 
     if(SiteHelper::featureEnabled('player_about')) {
         $menu[] = [
-            'title' => 'About',
+            'title' => 'Sobre',
             'route' => route('character.about', $character->id)
         ];
     }
 
     if(SiteHelper::featureEnabled('player_stats')) {
         $menu[] = [
-            'title' => 'Statistics',
+            'title' => 'Estatísticas',
             'route' => route('character.statistics', $character->id)
         ];
     }
@@ -106,7 +106,7 @@ use GameserverApp\Helpers\SiteHelper;
                 $right[] = $groups->first();
             } else {
                 $right[] = [
-                    'title' => 'Groups',
+                    'title' => 'Grupos',
                     'dropdown' => $groups->toArray()
                 ];
             }
@@ -149,7 +149,7 @@ use GameserverApp\Helpers\SiteHelper;
 
         $dropdown = [
             [
-                'title' => 'Account profile',
+                'title' => 'Perfil da conta',
                 'route' => route('user.show', $character->user->id)
             ]
         ];
@@ -162,7 +162,7 @@ use GameserverApp\Helpers\SiteHelper;
             )
         ) {
             $dropdown[] = [
-                'title' => 'Send message',
+                'title' => 'Enviar mensagem',
                 'route' => route('message.create', $character->user->id)
             ];
 
@@ -182,12 +182,12 @@ use GameserverApp\Helpers\SiteHelper;
                     auth()->user()->characterOnServer($character->server)
                 ) {
                     $dropdown[] = [
-                        'title' => 'Invite <u>' . $character->name() . '</u> to <u>' . auth()->user()->characterOnServer($character->server)->groupForServer($character->server)->name . '</u>',
+                        'title' => 'Convidar <u>' . $character->name() . '</u> para <u>' . auth()->user()->characterOnServer($character->server)->groupForServer($character->server)->name . '</u>',
                         'route' => route('message.create', $character->user->id)
                     ];
                 } else {
                     $dropdown[] = [
-                        'title' => 'Start group on <u>' . $character->server->name() . '</u>',
+                        'title' => 'Iniciar grupo em <u>' . $character->server->name() . '</u>',
                         'route' => route('message.create', $character->user->id)
                     ];
                 }
@@ -202,14 +202,14 @@ use GameserverApp\Helpers\SiteHelper;
             )
         ) {
             $dropdown[] = [
-                'title' => 'Send tokens',
+                'title' => 'Enviar tokens',
                 'route' => route('token.send', $character->user->id)
             ];
         }
 
         if($reportRoute = GameserverApp\Helpers\RouteHelper::report()) {
             $dropdown[] = [
-                'title' => 'Report this player',
+                'title' => 'Reportar este jogador',
                 'route' => $reportRoute . '?report_player=' . $character->id
             ];
         }
