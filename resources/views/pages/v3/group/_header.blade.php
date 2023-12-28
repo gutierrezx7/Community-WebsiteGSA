@@ -14,16 +14,16 @@
                             <i class="fa fa-users" aria-hidden="true"></i>
                             {{$group->memberCount()}}
                             @if($group->memberCount() == 1)
-                                member
+                                membro
                             @else
-                                members
+                                membros
                             @endif
                         </div>
 
                         <span class="divider">|</span>
 
                         <div class="founded">
-                            Founded {{$group->foundedDate()}}
+                            Fundado em {{$group->foundedDate()}}
                         </div>
 
                         <span class="divider">|</span>
@@ -61,7 +61,7 @@
         )
     ) {
         $right[] = [
-            'title' => 'Contact owner',
+            'title' => 'Contactar proprietário',
             'route' => route('message.create', $group->owners[0])
         ];
     }
@@ -71,7 +71,7 @@
         auth()->user()->isGroupMember($group)
     ) {
 //        $right[] = [
-//            'title' => 'Promote',
+//            'title' => 'Promover',
 //            'route' => route('group.promote', $group->id)
 //        ];
 
@@ -80,7 +80,7 @@
             $group->isAdmin(auth()->user())
         ) {
             $right[] = [
-                'title' => 'Settings',
+                'title' => 'Configurações',
                 'route' => route('group.settings', $group->id)
             ];
         }
@@ -98,11 +98,11 @@
     @include('partials.v3.custom-nav', [
         'menu' => [
             [
-                'title' => 'Group &nbsp; <span class="badge">' . $badgeContent . '</span>',
+                'title' => 'Grupo &nbsp; <span class="badge">' . $badgeContent . '</span>',
                 'route' => route('group.show', $group->id)
             ],
             [
-                'title' => 'Statistics',
+                'title' => 'Estatísticas',
                 'route' => route('group.statistics', $group->id)
             ],
             [
