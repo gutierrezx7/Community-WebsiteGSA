@@ -28,26 +28,21 @@
 
         </div>
         <div class="col-md-8">
-            <?php
-                $time_start = microtime(true);
-            ?>
+            @$time_start = microtime(true);
             @component('partials.v3.frame', [
                 'title' => 'Sobre ' . $character->name()
             ])
+                @$time_title = microtime(true);
                 @if($character->hasAbout())
                     {!! Markdown::convertToHtml($character->about()) !!}
-                    <?php
-                        $time_about = microtime(true);
-                    ?>
+                        @$time_about = microtime(true);
                 @else
                     <em>{{$character->name()}} ainda não possui informações sobre si.</em>
-                    <?php
-                        $time_name = microtime(true);
-                        $time_end = microtime(true);
-                        $exec_time_title = ($time_end - $time_start);
-                        $exec_time_about = ($time_end - $time_about);
-                        $exec_time_name = ($time_end - $time_name);
-                    ?>
+                        @$time_name = microtime(true);
+                        @$time_end = microtime(true);
+                        @$exec_time_title = ($time_end - $time_start);
+                        @$exec_time_about = ($time_end - $time_about);
+                        @$exec_time_name = ($time_end - $time_name);
                     <em>Title: {{ $exec_time_title }} <br> about: {{ $exec_time_about }} <br>  name: {{ $exec_time_name }}</em>
                 @endif
 
