@@ -1,5 +1,5 @@
 @component('partials.v3.frame', [
-    'title' => 'Monthly donation target &nbsp; <span class="label label-theme alternative">' . $target->total_income . ' / ' . $target->target . '</span>',
+    'title' => 'Meta de doação mensal &nbsp; <span class="label label-theme alternative">' . $target->total_income . ' / ' . $target->target . '</span>',
     'class' => 'center-title no-bottom-margin',
 ])
 
