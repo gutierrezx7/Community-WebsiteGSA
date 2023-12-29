@@ -43,7 +43,7 @@
                         @$exec_time_title = ($time_end - $time_start);
                         @$exec_time_about = ($time_end - $time_about);
                         @$exec_time_name = ($time_end - $time_name);
-                    <em>Title: {{ $exec_time_title }} <br> about: {{ $exec_time_about }} <br>  name: {{ $exec_time_name }}</em>
+                    <em>Title: {{ @$exec_time_title }} <br> about: {{ @$exec_time_about }} <br>  name: {{ @$exec_time_name }}</em>
                 @endif
 
                 @if(
