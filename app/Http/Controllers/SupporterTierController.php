@@ -13,7 +13,7 @@ class SupporterTierController extends Controller
     private $client;
 
     /**
-     * TokenController constructor.
+     * Construtor do Controlador.
      *
      * @param Client $client
      */
@@ -33,7 +33,7 @@ class SupporterTierController extends Controller
         if($request->has('status') == 'success') {
             session()->flash('alert', [
                 'status'  => 'success',
-                'message' => 'Thank you for showing your support!',
+                'message' => 'Obrigado por mostrar seu apoio!',
                 'stay'    => true
             ]);
         }
@@ -56,7 +56,7 @@ class SupporterTierController extends Controller
                 case 'cancel':
                     session()->flash('alert', [
                         'status'  => 'warning',
-                        'message' => 'Your order was cancelled',
+                        'message' => 'Seu pedido foi cancelado',
                         'stay'    => true
                     ]);
                     break;
@@ -64,7 +64,7 @@ class SupporterTierController extends Controller
                 case 'error':
                     session()->flash('alert', [
                         'status'  => 'warning',
-                        'message' => 'There was an error during the process. Please try again or contact the admin.',
+                        'message' => 'Houve um erro durante o processo. Por favor, tente novamente ou entre em contato com o administrador.',
                         'stay'    => true
                     ]);
                     break;
@@ -72,7 +72,7 @@ class SupporterTierController extends Controller
                 case 'discord-error':
                     session()->flash('alert', [
                         'status'  => 'warning',
-                        'message' => 'Please make sure to connect your Discord account before purchasing this Supporter Tier.',
+                        'message' => 'Certifique-se de conectar sua conta do Discord antes de comprar este Nível de Apoio.',
                         'stay'    => true
                     ]);
                     break;
@@ -80,7 +80,7 @@ class SupporterTierController extends Controller
                 case 'no-char-error':
                     session()->flash('alert', [
                         'status'  => 'warning',
-                        'message' => 'You need to have a character to order this Supporter Tier.',
+                        'message' => 'Você precisa ter um personagem para pedir este Nível de Apoio.',
                         'stay'    => true
                     ]);
                     break;
@@ -88,7 +88,7 @@ class SupporterTierController extends Controller
                 case 'paypal-missing-product-id':
                     session()->flash('alert', [
                         'status'  => 'warning',
-                        'message' => 'The PayPal product ID was not properly set. Ask the admin to update the Supporter Tier.',
+                        'message' => 'O ID do produto PayPal não foi configurado corretamente. Peça ao administrador para atualizar o Nível de Apoio.',
                         'stay'    => true
                     ]);
                     break;
@@ -96,7 +96,7 @@ class SupporterTierController extends Controller
                 case 'not-available':
                     session()->flash('alert', [
                         'status'  => 'warning',
-                        'message' => 'This feature is currently not supported.',
+                        'message' => 'Esta funcionalidade não é atualmente suportada.',
                         'stay'    => true
                     ]);
                     break;

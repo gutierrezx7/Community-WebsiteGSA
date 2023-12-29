@@ -78,7 +78,7 @@ class GroupController extends Controller
             'logs' => $this->api->groupLog($id, route('group.log', $id), $request->get('page'))
         ]);
     }
-
+    
 //    public function promote(Request $request, $id)
 //    {
 //        if(! SiteHelper::featureEnabled('tribe_page')) {
@@ -127,14 +127,14 @@ class GroupController extends Controller
             case 'success':
                 $alert = [
                     'status'  => 'success',
-                    'message' => 'Done! Your logs are now also reported to your Discord'
+                    'message' => 'Feito! Seus registros agora também são reportados para o seu Discord.'
                 ];
                 break;
 
             case 'configure':
                 $alert = [
                     'status'  => 'success',
-                    'message' => 'Almost done! Please finalize the configurations.'
+                    'message' => 'Quase lá! Por favor, finalize as configurações.'
                 ];
                 break;
 
@@ -142,7 +142,7 @@ class GroupController extends Controller
 
                 $alert = [
                     'status'  => 'danger',
-                    'message' => 'This Discord server is already connected to a GSA Dashboard.'
+                    'message' => 'Este servidor do Discord já está conectado a um Painel GSA.'
                 ];
                 break;
 
@@ -150,21 +150,21 @@ class GroupController extends Controller
 
                 $alert = [
                     'status'  => 'danger',
-                    'message' => 'This Discord server is already connected to another group.'
+                    'message' => 'Este servidor do Discord já está conectado a outro grupo.'
                 ];
                 break;
 
             case 'failed':
                 $alert = [
                     'status'  => 'danger',
-                    'message' => 'Something went wrong. Please make sure all permissions are checked.'
+                    'message' => 'Algo deu errado. Certifique-se de que todas as permissões estão marcadas.'
                 ];
                 break;
 
             case 'disconnected':
                 $alert = [
                     'status'  => 'success',
-                    'message' => 'Your Discord information was removed.'
+                    'message' => 'Suas informações do Discord foram removidas.'
                 ];
                 break;
         }
@@ -203,7 +203,7 @@ class GroupController extends Controller
         return redirect(route('group.settings', $group->id))->with([
             'alert' => [
                 'status' => 'success',
-                'message' => 'Settings saved!'
+                'message' => 'Configurações salvas!'
             ]
         ]);
     }
@@ -224,9 +224,9 @@ class GroupController extends Controller
             try {
                 $file = UploadHelper::validate($request, $name);
             } catch (UploadExceededFileSizeLimitException $e) {
-                return redirectBackWithAlert('The ' . $name . ' you tried to upload exceeded the upload size limit.', 'danger');
+                return redirectBackWithAlert('O ' . $name . ' que você tentou fazer upload excedeu o limite de tamanho de upload.', 'danger');
             } catch (UploadMimeTypeNotAcceptedException $e) {
-                return redirectBackWithAlert('The ' . $name . ' you tried to upload is not of the supported type.', 'danger');
+                return redirectBackWithAlert('O ' . $name . ' que você tentou fazer upload não é do tipo suportado.', 'danger');
             }
 
             if($file) {
@@ -235,7 +235,7 @@ class GroupController extends Controller
         }
 
         if(!isset($response)) {
-            return redirectBackWithAlert('Please select a file', 'warning');
+            return redirectBackWithAlert('Por favor, selecione um arquivo', 'warning');
         }
 
         if(
@@ -250,7 +250,7 @@ class GroupController extends Controller
         return redirect(route('group.settings', $group->id))->with([
             'alert' => [
                 'status' => 'success',
-                'message' => 'File uploaded!'
+                'message' => 'Arquivo enviado!'
             ]
         ]);
     }
@@ -264,7 +264,7 @@ class GroupController extends Controller
         $group = $this->api->group($id);
 
         if($request->get('channel_id') == '-1') {
-            return redirectBackWithAlert('Please select a Discord channel', 'danger');
+            return redirectBackWithAlert('Por favor, selecione um canal do Discord', 'danger');
         }
 
         $response = $this->api->saveGroupDiscordChannel(

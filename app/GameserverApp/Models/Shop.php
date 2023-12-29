@@ -134,8 +134,8 @@ class Shop extends Model implements LinkableInterface
 
         if($this->discount()) {
             return '<span class="discounted_price">
-                        <span class="from_price">From: <span>' . $this->tokenSuffix($this->tokenPrice()) . '</span></span><br>
-                        <span class="to_price">To: <span>' . $this->tokenSuffix($this->discountedPrice()) . '</span></span>
+                        <span class="from_price">De: <span>' . $this->tokenSuffix($this->tokenPrice()) . '</span></span><br>
+                        <span class="to_price">Para: <span>' . $this->tokenSuffix($this->discountedPrice()) . '</span></span>
                     </span>';
         }
 

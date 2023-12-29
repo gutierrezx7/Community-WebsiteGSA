@@ -33,11 +33,11 @@ class SupportTier extends Model implements LinkableInterface
     public function label()
     {
         if($discount = $this->discount()) {
-            return $discount . '% discount';
+            return $discount . '% desconto';
         }
 
         if($this->cluster()) {
-            return $this->cluster() . ' only';
+            return $this->cluster() . ' somente';
         }
 
         return false;
