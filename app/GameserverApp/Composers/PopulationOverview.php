@@ -22,19 +22,19 @@ class PopulationOverview
         $stats = [];
 
         $stats[] = [
-            'name' => 'Fresh survivors',
+            'name' => 'Novos sobreviventes',
             'col' => 6,
             'route' => 'new-characters'
         ];
 
         $stats[] = [
-            'name' => 'Online players',
+            'name' => 'Jogadores online',
             'col' => 6,
             'route' => 'online-players'
         ];
 
         $stats[] = [
-            'name' => 'Hours played per day',
+            'name' => 'Horas jogadas por dia',
             'col' => 12,
             'route' => 'hours-played'
         ];
