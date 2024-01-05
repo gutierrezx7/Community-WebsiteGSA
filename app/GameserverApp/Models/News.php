@@ -71,13 +71,13 @@ class News extends Model implements LinkableInterface
     {
         switch($this->type) {
             case self::MAINTENANCE:
-                return '<span class="label label-theme">Maintenance</span>';
+                return '<span class="label label-theme">Manutenção</span>';
 
             case self::EVENT:
-                return '<span class="label label-theme">Event</span>';
+                return '<span class="label label-theme">Evento</span>';
 
             case self::IMPORTANT:
-                return '<span class="label label-theme alternative">Important</span>';
+                return '<span class="label label-theme alternative">Importante</span>';
 
             default:
                 return;
@@ -88,13 +88,13 @@ class News extends Model implements LinkableInterface
     {
         switch($this->type) {
             case self::MAINTENANCE:
-                return [translate('maintenance', 'Maintenance')];
+                return [translate('maintenance', 'Manutenção')];
 
             case self::EVENT:
-                return [translate('event', 'Event')];
+                return [translate('event', 'Evento')];
 
             case self::IMPORTANT:
-                return [translate('important', 'Important')];
+                return [translate('important', 'Importante')];
 
             default:
                 return [];

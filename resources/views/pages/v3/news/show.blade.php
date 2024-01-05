@@ -58,7 +58,7 @@ if($item->hasImage()) {
 
 
     @include('partials.v3.hr-title', [
-        'title' => translate('more_news', 'More news')
+        'title' => translate('more_news', 'Mais novidades')
     ])
 
     <div class="row">
