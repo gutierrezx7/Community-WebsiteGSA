@@ -41,7 +41,7 @@
                 <div class="col-md-12 content">
                     <span>&copy; 2015 - {{date('Y')}}</span>
                     <i>//</i>
-                    <a href="https://ark.expertlevel.net" target="_blank" rel="FOLLOW">Dev GSA Fork ExpertLevelNetwork</a>
+                    <a href="https://discord.com/invite/aHuR6Vfykm" target="_blank" rel="FOLLOW">Dev GSA Fork ExpertLevelNetwork</a>
 
                     @if(config('app.debug'))
                         <span>
