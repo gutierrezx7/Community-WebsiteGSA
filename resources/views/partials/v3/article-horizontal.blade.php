@@ -28,7 +28,7 @@
                 </a>
                 @include('partials.v3.button', [
                     'route' => $route,
-                    'title' => translate('read_more', 'Read more')
+                    'title' => translate('read_more', 'Ler mais')
                 ])
             </div>
         </div>

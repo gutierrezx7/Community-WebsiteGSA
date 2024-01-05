@@ -47,7 +47,7 @@
     @endforelse
 
     @include('partials.v3.hr-title', [
-        'title' => translate('archive', 'Archive'),
+        'title' => translate('archive', 'Arquivadas'),
         'id' => 'archive'
     ])
 
